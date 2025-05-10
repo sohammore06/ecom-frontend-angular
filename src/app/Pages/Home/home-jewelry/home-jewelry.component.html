@@ -1,0 +1,391 @@
+<app-header-jewelry></app-header-jewelry>
+<div class="jewelry-home">
+    <section class="kalles-home-section type_slideshow type_carousel kalles-jewelry-home overflow-hidden min-vh-100 swiper jewelrySwiper">
+        <div class="slideshow swiper-wrapper">
+            <div class="slideshow__slide swiper-slide">
+                <img src="assets/images/home-jewelry/main-slide-01.jpg" alt="" class="position-absolute w-100 h-100 object-fit-cover">
+                <div class="container position-relative">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="content text-white">
+                                <h5 class="fw-medium fs-18 mb-2">A must-have for any jewellery box</h5>
+                                <h1 class="fs-50 fw-semibold mb-4">70% OFF NEW COLLECTIONS</h1>
+                                <a class="btn btn-dark rounded-0 min-w-150 min-h-45 d-inline-flex align-items-center justify-content-center fw-semibold px-4" routerLink="/shop">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow__slide swiper-slide">
+                <img src="assets/images/home-jewelry/main-slide-02.jpg" alt="" class="position-absolute w-100 h-100 object-fit-cover">
+                <div class="container position-relative">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="content text-center text-white">
+                                <h5 class="fw-medium fs-18 mb-2">Autumn-Spring Collections</h5>
+                                <h1 class="fs-50 fw-semibold mb-4">WEDDING SEASON 50% OFF</h1>
+                                <a class="btn btn-dark rounded-0 min-w-150 min-h-45 d-inline-flex align-items-center justify-content-center fw-semibold px-4" routerLink="/shop">Discover More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cat-section pb-4">
+        <div class="container">
+            <div class="row g-2 g-md-4">
+                <div class="col-md-3">
+                    <div class="row g-2 g-md-4">
+                        <div class="col-6 col-md-12">
+                            <a routerLink="/shop" class="d-block position-relative cat_grid_item overflow-hidden shops-img">
+                                <div class="h-100 w-100" style="background-image: url('assets/images/home-jewelry/banner-collection-01.png');background-size: cover;">
+                                </div>
+                                <div class="cat-grid-button text-white bg-dark">
+                                    <div class="cat_grid_item__title">BRACELETS</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <a routerLink="/shop" class="d-block position-relative cat_grid_item overflow-hidden shops-img">
+                                <div class="h-100 w-100" style="background-image: url('assets/images/home-jewelry/banner-collection-05.png');background-size: cover;">
+                                </div>
+                                <div class="cat-grid-button text-white bg-dark">
+                                    <div class="cat_grid_item__title">NECKLACE</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-2 g-md-4">
+                        <div class="col-lg-12">
+                            <a routerLink="/shop" class="d-block position-relative cat_grid_item overflow-hidden shops-img">
+                                <div class="h-100 w-100" style="background-image: url('assets/images/home-jewelry/banner-collection-02.png'); background-size: contain; background-position: center">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-12">
+                            <a routerLink="/shop" class="d-none d-md-block position-relative cat_grid_item overflow-hidden shops-img">
+                                <div class="h-100 w-100" style="background-image: url('assets/images/home-jewelry/banner-collection-04.png'); background-position: center;">
+                                </div>
+                                <div class="cat-grid-button text-white bg-dark">
+                                    <div class="cat_grid_item__title">ENGAGEMENT</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-0">
+                    <a routerLink="/shop" class="d-block position-relative cat_grid_item overflow-hidden h-524">
+                        <div class="h-100 w-100" style="background-image: url('assets/images/home-jewelry/banner-collection-03.png');background-size: cover;">
+                        </div>
+                        <div class="cat-grid-button text-white bg-dark">
+                            <div class="cat_grid_item__title">ACCESSORIES</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-12 d-md-none">
+                    <a routerLink="/shop" class="d-block position-relative cat_grid_item overflow-hidden shops-img">
+                        <div class="h-100 w-100" style="background-image: url('assets/images/home-jewelry/banner-collection-04.png'); background-position:  center; background-size: cover;">
+                        </div>
+                        <div class="cat-grid-button text-white bg-dark">
+                            <div class="cat_grid_item__title">ENGAGEMENT</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="type_tab_collection kalles-glasses-tab-product pb-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <div>
+                            <h1 class="position-relative text-capitalize font-playfair fw-medium">
+                                <span>Our Best Selling</span>
+                            </h1>
+                            <span class="dn tt_divider"><span></span><i class="la la-close fs-14 text-muted"></i><span></span></span>
+                        </div>
+                        <p class="fs-14 text-muted mt-2 mb-0">Discover our best selling items</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 g-md-4">
+                <div class="col-lg-3 col-6 col-md-4" *ngFor="let product of products">
+                    <div class="topbar-product-card" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                        <div class="position-relative overflow-hidden">
+                            <span *ngIf="product.saleTag" class="onsale position-absolute bg-danger text-white d-flex align-items-center justify-content-center z-3">
+                                {{ product.saleTag }}
+                            </span>
+                            <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="{{ product.name }}" class="img-fluid w-100">
+                            <a href="javascript:void(0);" class="wishlist d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;">
+                                <i class="facl facl-heart-o text-danger"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute">
+                                <i class="facl facl-heart-o text-danger"></i>
+                            </a>
+                            <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn fs-14">
+                                    <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                </a>
+                                <button type="button" class="btn fs-14" (click)="openModal('cardModal')">
+                                    <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <h6 class="mb-1 fs-16 font-playfair">
+                                <a routerLink="/product-detail-layout-01" class="text-reset">{{ product.name }}</a>
+                            </h6>
+                            <p class="mb-0 fs-15 text-muted">
+                                <span>{{ product.price }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="banner-section position-relative mt-5 pt-4">
+        <div class="container">
+            <div class="row g-2 g-md-4">
+                <div class="col-lg-6">
+                    <a href="javascript:void(0);" class="position-relative hover-zoom d-block">
+                        <img src="assets/images/home-jewelry/banner-promotion-01.jpg" alt="" class="img-fluid hover-zoom-img w-100">
+                        <div class="position-absolute start-0 start-0 end-0 top-0 bottom-0 d-flex align-items-end m-4 mb-5">
+                            <div class="text-white">
+                                <h5 class="fs-16 fw-medium">The latest on-trend styles</h5>
+                                <h4 class="fs-36 font-playfair fw-semibold mb-4">Check out our latest range</h4>
+                                <p class="fw-normal btn btn-dark rounded-0 font-futura mb-0 btn_icon_true d-inline-block position-relative fs-14">
+                                    Shop Now</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="javascript:void(0);" class="position-relative hover-zoom d-block">
+                        <img src="assets/images/home-jewelry/banner-promotion-02.jpg" alt="" class="img-fluid hover-zoom-img w-100">
+                        <div class="position-absolute top-50 start-50 translate-middle d-flex align-items-center text-center">
+                            <div class="text-white">
+                                <h5 class="fs-16 fw-medium">Shop our most popular products</h5>
+                                <h4 class="fs-36 font-playfair fw-semibold mb-4" style="white-space: nowrap;">Earing Collections</h4>
+                                <p class="fw-normal btn btn-dark rounded-0 font-futura mb-0 btn_icon_true d-inline-block position-relative fs-14">
+                                    Shop Now</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="type_tab_collection pt-4 pb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <div>
+                            <h1 class="position-relative text-capitalize font-playfair fw-medium">
+                                <span>Our Trendings</span>
+                            </h1>
+                            <span class="dn tt_divider"><span></span><i class="la la-close fs-14 text-muted"></i><span></span></span>
+                        </div>
+                        <p class="fs-14 text-muted mt-2 mb-0">Explore all trending items</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 g-md-4">
+                <div class="col-lg-3 col-6 col-md-4" *ngFor="let product of products2; let i = index">
+                    <div class="topbar-product-card" (mouseenter)="setHovered(i, true)" (mouseleave)="setHovered(i, false)">
+                        <div class="position-relative overflow-hidden">
+                            <span *ngIf="product.discount" class="onsale position-absolute bg-warning text-white d-flex align-items-center justify-content-center z-3">{{ product.discount }}</span>
+                            <img [src]="hoveredImage[i] ? product.images[1] : product.images[0]" alt="" class="img-fluid w-100">
+                            <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-danger"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-danger"></i>
+                            </a>
+                            <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                <button type="button" class="btn fs-14" (click)="openModal('cardModal')"><span>Quick Shop</span> <i class="iccl iccl-cart"></i></button>
+                            </div>
+                            <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white m-2" style="z-index: 1;">
+                                <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn responsive-cart fs-14 p-2" style="width:36px; height: 36px;">
+                                    <i class="iccl iccl-eye fw-semibold"></i>
+                                </a>
+                                <button type="button" class="btn responsive-cart fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                    <i class="iccl iccl-cart fw-semibold"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <h6 class="mb-1 fs-16 font-playfair">
+                                <a [href]="product.detailLink" class="text-reset">{{ product.name }}</a>
+                            </h6>
+                            <p class="mb-0 fs-15 text-muted">
+                                <del *ngIf="product.originalPrice">{{ product.originalPrice }}</del>
+                                <span [ngClass]="{'text-danger': product.originalPrice}">{{ product.price }}</span>
+                            </p>
+                            <div class="product-color-list mt-2 gap-2 d-flex align-items-center justify-content-center">
+                                <a *ngFor="let color of product.colorVariants" href="javascript:void(0);" (click)="hoveredImage[i] = false; product.images[0] = color" [style.background-image]="'url(' + color + ')'" class="d-inline-block rounded-circle"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="kalles-section_type_featured_blog pt-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center">
+                        <div>
+                            <h1 class="position-relative text-capitalize font-playfair fw-medium">
+                                <span>From The Blogs</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper blogSwiper">
+                    <div class="row g-2 g-md-4  blog-arrow swiper-wrapper" dir="ltr">
+                        <div class="col-md-6 col-lg-4 px-2 px-lg-3 swiper-slide">
+                            <div class="blog-card">
+                                <a routerLink="/blog-left-sidebar" class="overflow-hidden d-block blog-wrap">
+                                    <img src="assets/images/home-jewelry/blog-01.jpg" alt="" class="img-fluid">
+                                </a>
+                                <div class="d-flex gap-1 align-items-center text-muted my-3">
+                                    On
+                                    <span class="text-body">September 10, 2024</span>
+                                </div>
+                                <h6 class="fs-17 font-playfair fw-medium main_link"><a routerLink="/blog-post-with-instagram-shop" class="text-reset">Unique First
+                                        Anniversary Gift Ideas</a></h6>
+                                <div class="post-content text-muted mt-3">If you’ve been faced with the decision to
+                                    reschedule or cancel your 2020 wedding, you’re not alone. If only th...</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 px-2 px-lg-3 swiper-slide">
+                            <div class="blog-card">
+                                <a routerLink="/blog-left-sidebar" class="overflow-hidden d-block blog-wrap">
+                                    <img src="assets/images/home-jewelry/blog-02.jpg" alt="" class="img-fluid">
+                                </a>
+                                <div class="d-flex gap-1 align-items-center text-muted my-3">
+                                    On
+                                    <span class="text-body">September 10, 2024</span>
+                                </div>
+                                <h6 class="fs-17 font-playfair fw-medium main_link"><a routerLink="/blog-post-with-instagram-shop" class="text-reset">Glossary Of Jewelry
+                                        Terms</a></h6>
+                                <div class="post-content text-muted mt-3">IS TROILITE IN METEORITE AN IMPERFECTION? This
+                                    depends entirely on who you ask. And could potentially lead into a h...</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 px-2 px-lg-3 swiper-slide">
+                            <div class="blog-card">
+                                <a routerLink="/blog-left-sidebar" class="overflow-hidden d-block blog-wrap">
+                                    <img src="assets/images/home-jewelry/blog-03.jpg" alt="" class="img-fluid">
+                                </a>
+                                <div class="d-flex gap-1 align-items-center text-muted my-3">
+                                    On
+                                    <span class="text-body">September 10, 2024</span>
+                                </div>
+                                <h6 class="fs-17 font-playfair fw-medium main_link"><a routerLink="/blog-post-with-instagram-shop" class="text-reset">Covid-19 Wedding
+                                        Planning Advice</a></h6>
+                                <div class="post-content text-muted mt-3">The sad reality is that some of us are losing very
+                                    important people in our lives, including partners of many y...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="overflow-hidden">
+        <div class="container-fuild px-0">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center mb-4">
+                        <div>
+                            <h3 class="position-relative flex font-playfair fw-semibold fs-30 text-uppercase">
+                                <span>&#64; FOLLOW US ON INSTAGRAM</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-0 swiper jewelry2Swiper" dir="ltr">
+                <div class="swiper-wrapper">
+                    <div class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="overflow-hidden img-zoom">
+                            <img src="assets/images/home-jewelry/instagram-01.jpg" alt="" class="w-100 img-fluid h-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="overflow-hidden img-zoom">
+                            <img src="assets/images/home-jewelry/instagram-02.jpg" alt="" class="w-100 img-fluid h-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="overflow-hidden img-zoom">
+                            <img src="assets/images/home-jewelry/instagram-03.jpg" alt="" class="w-100 img-fluid h-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="overflow-hidden img-zoom">
+                            <img src="assets/images/home-jewelry/instagram-04.jpg" alt="" class="w-100 img-fluid h-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="overflow-hidden img-zoom">
+                            <img src="assets/images/home-jewelry/instagram-05.jpg" alt="" class="w-100 img-fluid h-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="overflow-hidden img-zoom">
+                            <img src="assets/images/home-jewelry/instagram-06.jpg" alt="" class="w-100 img-fluid h-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="kalles-section-type-shipping">
+        <div class="container">
+            <div class="gap-4 d-flex overflow-x-auto" style="white-space: nowrap;">
+                <div class="d-flex gap-3">
+                    <i class="pegk pe-7s-car fs-36 text-muted flex-shrink-0"></i>
+                    <div class="flex-grow-1">
+                        <h6 class="text-uppercase font-playfair">Free Shipping</h6>
+                        <p class="text-muted mb-0">Free shipping on all US order or <br /> order above $100</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <i class="pegk pe-7s-help2 fs-36 text-muted flex-shrink-0"></i>
+                    <div class="flex-grow-1">
+                        <h6 class="text-uppercase font-playfair">Support 24/7</h6>
+                        <p class="text-muted mb-0">Contact us 24 hours a day, 7 <br /> days a week</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <i class="pegk pe-7s-refresh fs-36 text-muted flex-shrink-0"></i>
+                    <div class="flex-grow-1">
+                        <h6 class="text-uppercase font-playfair">30 Days Return</h6>
+                        <p class="text-muted mb-0">Simply return it within 30 days <br /> for an exchange.</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <i class="pegk pe-7s-door-lock fs-36 text-muted flex-shrink-0"></i>
+                    <div class="flex-grow-1">
+                        <h6 class="text-uppercase font-playfair">100% Payment Secure</h6>
+                        <p class="text-muted mb-0">We ensure secure payment with <br /> PEV</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+    <app-popup></app-popup>
+</div>
+<app-card-model></app-card-model>

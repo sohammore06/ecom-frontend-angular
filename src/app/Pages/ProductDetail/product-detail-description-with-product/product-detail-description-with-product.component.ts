@@ -1,0 +1,73 @@
+import { Component } from '@angular/core';
+import { CardModelComponent } from "../../../Component/card-model/card-model.component";
+import { PopupComponent } from "../../../Component/popup/popup.component";
+import { FooterComponent } from "../../../Component/Footer/footer/footer.component";
+import { ProductRecentlyCardComponent } from "../../../Component/product-recently-card/product-recently-card.component";
+import { ProductLikeCardComponent } from "../../../Component/product-like-card/product-like-card.component";
+import { TopBannerComponent } from "../../../Component/top-banner/top-banner.component";
+import { HeaderComponent } from "../../../Component/Header/header/header.component";
+import { ProductModalsComponent } from "../../../Component/product-modals/product-modals.component";
+import { SwiperService } from '../../../Services/swiper.service';
+
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Modal, Offcanvas } from 'bootstrap';
+
+@Component({
+    selector: 'app-product-detail-description-with-product',
+    imports: [RouterLink, CommonModule, CardModelComponent, PopupComponent, FooterComponent, ProductRecentlyCardComponent, ProductLikeCardComponent, TopBannerComponent, HeaderComponent, ProductModalsComponent],
+    templateUrl: './product-detail-description-with-product.component.html',
+    styleUrl: './product-detail-description-with-product.component.scss'
+})
+export class ProductDetailDescriptionWithProductComponent {
+  constructor(private swiperService: SwiperService) { }
+
+  modalInstances: { [key: string]: Modal } = {};
+
+  offcanvasInstances: { [key: string]: Offcanvas } = {};
+
+  ngAfterViewInit(): void {
+    this.swiperService.initThumbsSwiper('.productMain', '.productSmall');
+
+    this.swiperService.initSwiper('.descriptionSwiper', 1, 0, 3000, 1, 2, 4);
+    const modalElements = document.querySelectorAll('.modal');
+    modalElements.forEach((modalElement) => {
+      const modalId = modalElement.getAttribute('id')!;
+      const modal = new Modal(modalElement as HTMLElement);
+      this.modalInstances[modalId] = modal;
+    });
+    this.swiperService.initThumbsSwiper('.productMain', '.productSmall');
+    const offcanvasElements = document.querySelectorAll('.offcanvas');
+    offcanvasElements.forEach((offcanvasElement) => {
+      const offcanvasId = offcanvasElement.getAttribute('id');
+      if (offcanvasId) {
+        const offcanvas = new Offcanvas(offcanvasElement as HTMLElement);
+        this.offcanvasInstances[offcanvasId] = offcanvas;
+      }
+    });
+  }
+
+  openOffcanvas(offcanvasId: string) {
+    const offcanvas = this.offcanvasInstances[offcanvasId];
+    if (offcanvas) {
+      offcanvas.show();
+    } else {
+      console.error(`Offcanvas with ID '${offcanvasId}' not found 🔥`);
+    }
+  }
+
+  openModal(modalId: string) {
+    const modal = this.modalInstances[modalId];
+    if (modal) {
+      modal.show();
+    } else {
+      console.error(`Modal with ID '${modalId}' not found 😢`);
+    }
+  }
+  size: string = 'M';
+
+  setSize(selectedSize: string) {
+    this.size = selectedSize;
+  }
+
+}

@@ -1,0 +1,72 @@
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <div class="mb-2">
+                        <h3 class="section-title position-relative flex">
+                            <span>TRENDING</span>
+                        </h3>
+                    </div>
+                    <span class="section-subtitle sub-title font-secondary fst-italic fs-14 text-muted">Top view in
+                        this week</span>
+                </div>
+            </div>
+        </div>
+        <div class="row g-lg-4 g-3 mt-4">
+            <div *ngFor="let product of products" class="col-md-3 col-6">
+                <div class="topbar-product-card pb-3" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                    <div class="position-relative overflow-hidden">
+                        <span *ngIf="product.discount" class="new-label bg-danger text-white rounded-circle">
+                            {{ product.discount }}
+                        </span>
+
+
+                        <span *ngIf="product.isNew" class="new-label bg-success text-white rounded-circle text-center">
+                            New
+                        </span>
+                        <img [src]="product.isHovered ? product.hoverImage : product.imageUrl" alt="" class="img-fluid w-100 object-fit-cover">
+                        <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                            <i class="facl facl-heart-o text-white"></i>
+                        </a>
+
+                        <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                            <i class="facl facl-heart-o text-white"></i>
+                        </a>
+
+                        <div class="product-button d-none d-lg-flex flex-column gap-2">
+                            <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                            <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                            </button>
+                        </div>
+
+                        <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                            <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                <i class="iccl iccl-eye fw-semibold"></i>
+                            </a>
+                            <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                <i class="iccl iccl-cart fw-semibold"></i>
+                            </button>
+                        </div>
+
+                        <p class="product-size mb-0 text-center text-white fw-medium">{{ product.sizes.join(', ') }}</p>
+                    </div>
+
+                    <a routerLink="/product-detail-layout-01" class="mt-3 d-block">
+                        <h6 class="mb-1">{{ product.title }}</h6>
+                        <p class="mb-0 fs-14 text-muted">
+                            <span *ngIf="product.oldPrice">{{ product.oldPrice }}</span>
+                            <span>{{ product.price }}</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mt-4 text-center">
+            <button class="btn-load btn btn-custom-dark fw-semibold min-w-150 rounded-pill">Load More</button>
+        </div>
+    </div>
+</section>

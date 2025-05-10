@@ -1,0 +1,181 @@
+<app-top-banner></app-top-banner>
+
+<app-header2></app-header2>
+<div>
+
+    <section class="min-vh-100 kalles-categories-link-banner position-relative" style="background-image: url('assets/images/home-static-image/main-slide.jpg');">
+        <div class="position-absolute top-0 start-0 end-0 bottom-0 text-center py-5 text-white d-flex align-items-center justify-content-center">
+            <div class="p-3 p-md-0">
+                <h3 class="fs-18 font-secondary fst-italic mb-3">Summer Lookbook</h3>
+                <h1 class="text-uppercase fs-60 fw-bold mb-4">FLASH SALE 70% OFF</h1>
+                <a routerLink="/shop" class="btn btn-custom-white text-white fw-medium min-w-150 rounded-pill stretched-link">Shop
+                    Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cat-section pb-4 ">
+        <div class="container-fluid">
+            <div class="row g-xl-4 g-3">
+                <div class="col-xl-4 col-md-6">
+                    <a routerLink="/shop" class="d-inline-flex">
+                        <img src="assets/images/home-static-image/shop-men.jpg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <a routerLink="/shop" class="d-inline-flex">
+                        <img src="assets/images/home-static-image/shop-women.jpg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <a routerLink="/shop" class="d-inline-flex">
+                        <img src="assets/images/home-static-image/hipster_girl.jpg" alt="" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row g-lg-4 g-3 gy-md-0 gy-4 align-items-center">
+                <div class="col-md-4">
+                    <a routerLink="/shop-right-sidebar" class="kalles-banner-promotion d-block">
+                        <img src="assets/images/home-video-banner/bn-01.jpeg" alt="" class="img-fluid" />
+                        <div class="p-20 position-absolute bottom-0 left-0 text-body">
+                            <p class="text-uppercase fw-medium fs-14 mb-1">View Collections</p>
+                            <h3 class="fs-35">LOOKBOOK</h3>
+                            <p class="text-muted mb-0">Your world of fashion in numbers</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="kalles-banner-promotion topbar-product-card">
+                        <div class="position-relative overflow-hidden">
+                            <span class="new-label bg-danger text-white rounded-circle"> -34% </span>
+                            <img [src]="imageUrl" alt="" class="img-fluid" />
+
+                            <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top: 10px; left: 10px" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-white"></i>
+                            </a>
+
+                            <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-white"></i>
+                            </a>
+
+                            <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14">
+                                    <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                </a>
+                                <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                    <span>Quick Shop</span>
+                                    <i class="iccl iccl-cart"></i>
+                                </button>
+                            </div>
+
+                            <div class="product-size text-center d-none d-lg-block">
+                                <h6 class="mb-1">
+                                    <a routerLink="/product-detail-layout-01" class="main_link">La Bohème Rose Gold</a>
+                                </h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <del>$60.00</del>
+                                    <span class="text-danger">$45.00</span>
+                                </p>
+
+                                <div class="product-color-list mt-1 gap-2 d-flex align-items-center justify-content-center p-2">
+                                    <a href="javascript:void(0);" (mouseover)="changeImage('assets/images/home-classic/pr-big-24.jpg')" class="d-inline-block bg_color_pink rounded-circle"></a>
+                                    <a href="javascript:void(0);" (mouseover)="changeImage('assets/images/home-classic/pr-big-25.jpg')" class="d-inline-block bg-dark rounded-circle"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <a routerLink="/shop" class="kalles-banner-promotion d-block">
+                        <img src="assets/images/home-classic/pr-big-26.jpg" alt="" class="img-fluid" />
+                        <div class="p-20 position-absolute top-50 end-0 text-body start-0 content-position text-center">
+                            <p class="text-uppercase fw-medium fs-18 mb-1">Men Collection</p>
+                            <h3 class="fs-50">SALE 70%</h3>
+                            <button class="btn btn-custom-dark fw-medium min-w-150 rounded-pill">Shop Now</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mt-5 pt-5">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center">
+                        <div class="mb-2">
+                            <h3 class="section-title position-relative flex">
+                                <span>TRENDING</span>
+                            </h3>
+                        </div>
+                        <span class="section-subtitle sub-title font-secondary fst-italic fs-14 text-muted">Top view in
+                            this week</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 pt-2 swiper productSwiper">
+                <div class="swiper-wrapper">
+                    <div class="col-md-3 col-xl-2 col-6 px-lg-12 px-2 swiper-slide" *ngFor="let product of products">
+                        <div class="topbar-product-card" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                            <div class="position-relative overflow-hidden">
+                                <span *ngIf="product.discount" class="new-label bg-danger text-white rounded-circle">
+                                    {{ product.discount }}
+                                </span>
+
+
+                                <span *ngIf="product.isNew" class="new-label bg-success text-white rounded-circle text-center">
+                                    New
+                                </span>
+                                <img [src]="product.isHovered ? product.hoverImage : product.imageUrl" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="d-lg-none position-absolute " style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o text-white"></i></a>
+                                <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o text-white"></i></a>
+
+                                <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                                <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;"><i class="iccl iccl-eye fw-semibold"></i></a>
+                                    <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')" class="btn rounded-pill fs-14">
+                                        <i class="iccl iccl-cart fw-semibold"></i></button>
+                                </div>
+                                <p class="product-size mb-0 text-center text-white fw-medium">{{ product.sizes.join(', ') }}</p>
+                            </div>
+                            <a routerLink="/product-detail-layout-01" class="mt-3 d-block">
+                                <h6 class="mb-1">{{ product.title }}</h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span *ngIf="product.oldPrice">{{ product.oldPrice }}</span>
+                                    <span>{{ product.price }}</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-our-product></app-our-product>
+
+    <app-latest-blog></app-latest-blog>
+
+    <app-follow-instagram></app-follow-instagram>
+
+    <app-shipping></app-shipping>
+
+    <app-footer></app-footer>
+
+    <app-popup></app-popup>
+
+</div>
+<app-card-model></app-card-model>

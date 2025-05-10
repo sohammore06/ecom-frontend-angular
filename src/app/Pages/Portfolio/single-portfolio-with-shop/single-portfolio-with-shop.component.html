@@ -1,0 +1,252 @@
+<app-top-banner></app-top-banner>
+<app-header></app-header>
+<div>
+    <div style="background-image: url('assets/images/portfolio/p-04.jpg'); " class="position-relative">
+        <div class="position-absolute top-0 start-0 right-0 bottom-0 bg-dark w-100 opacity-50"></div>
+        <div class="px-4">
+            <div class="text-white text-center py-5 position-relative">
+                <h4 class="fs-20 fw-medium">BRANDING DESIGN MOCKUP</h4>
+                <p class="fs-14 section-subtitle sub-title font-secondary fst-italic">April 5, 2020</p>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="mt-4 text-muted pt-4">
+                <p>
+                    Typography is the work of <b class="fw-semibold">typesetters, compositors, typographers, graphic
+                        designers, art directors, manga artists, comic book artists, graffiti artists,</b> and
+                    now—anyone
+                    who arranges words, letters, numbers, and symbols for publication, display, or distribution—from
+                    clerical workers and newsletter writers to anyone self-publishing materials.
+                </p>
+                <p class="sub-title font-secondary my-3 fst-italic py-4 px-5 gray-light">
+                    Sed utgio perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                    beatae vitae dicta sunt explicabo.
+                </p>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                <div class="row row-cols-2 row-cols-md-3 g-2">
+                    <div class="col">
+                        <a routerLink="/shop" class="db">
+                            <img src="assets/images/portfolio/gallery-full-size-01.jpg" class="img-fluid h-100" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a routerLink="/shop" class="db">
+                            <img src="assets/images/portfolio/gallery-02.jpg" class="img-fluid h-100" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a routerLink="/shop" class="db">
+                            <img src="assets/images/portfolio/gallery-03.jpg" class="img-fluid h-100" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a routerLink="/shop" class="db">
+                            <img src="assets/images/portfolio/gallery-04.jpg" class="img-fluid h-100" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a routerLink="/shop" class="db">
+                            <img src="assets/images/portfolio/gallery-05.jpg" class="img-fluid h-100" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a routerLink="/shop" class="db">
+                            <img src="assets/images/portfolio/gallery-06.jpg" class="img-fluid h-100" alt="">
+                        </a>
+                    </div>
+                </div>
+                <p class="py-3">Typography is the work of
+                    <strong>typesetters, compositors, typographers, graphic designers, art directors, manga artists,
+                        comic book artists, graffiti artists,</strong> and now—anyone who arranges words, letters,
+                    numbers, and symbols for publication, display, or distribution—from clerical workers and newsletter
+                    writers to anyone self-publishing materials.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="py-3">
+                <h3 class="shop-title position-relative w-100 text-center">
+                    <span class="bg-white px-3 ">Shop The Look</span>
+                </h3>
+                <div class="row my-4 py-2 swiper shopSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div *ngFor="let product of products" class="col-md-3 col-6 px-lg-12 px-2 swiper-slide" [attr.data-id]="product.id">
+                            <div class="topbar-product-card pb-3">
+                                <div class="position-relative overflow-hidden">
+                                    <span *ngIf="product.discount" class="new-label bg-danger text-white rounded-circle">
+                                        {{ product.discount }}
+                                    </span>
+                                    <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid" />
+
+                                    <a href="javascript:void(0);" class="wishlistadd position-absolute text-white" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                        <i class="facl facl-heart-o"></i>
+                                    </a>
+
+                                    <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                        <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14">
+                                            <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                        </a>
+                                        <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                            <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                        <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                            <i class="iccl iccl-eye fw-semibold"></i>
+                                        </a>
+                                        <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                            <i class="iccl iccl-cart fw-semibold"></i>
+                                        </button>
+                                    </div>
+
+                                    <p *ngIf="product.sizes.length" class="product-size mb-0 text-center text-white fw-medium">
+                                        {{ product.sizes.join(', ') }}
+                                    </p>
+                                </div>
+
+                                <div class="mt-3">
+                                    <h6 class="mb-1">
+                                        <a href="javascript:void(0);" class="product-title">{{ product.name }}</a>
+                                    </h6>
+                                    <p class="mb-0 fs-14 text-muted">
+                                        <del *ngIf="product.originalPrice">${{ product.originalPrice }}</del>
+                                        <span [ngClass]="{ 'text-danger': product.discount }">${{ product.price }}</span>
+                                    </p>
+
+                                    <div *ngIf="product.colorVariants?.length" class="product-color-list mt-2 gap-2 d-flex align-items-center">
+                                        <a *ngFor="let color of product.colorVariants" href="javascript:void(0);" (mouseover)="product.imageUrl = color" (click)="product.imageUrl = color; $event.preventDefault()" [style.background]="'url(' + color + ') no-repeat center center'" style="background-size: cover; width: 24px; height: 24px; display: inline-block; border-radius: 50%;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row mb-4 my-md-5 g-3">
+                    <div class="col-md-6 col-lg-4 text-center border-end">
+                        <h6>CATEGORY:</h6>
+                        <p class="text-muted">Portfolio</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-center border-end">
+                        <h6>AUTHOR:</h6>
+                        <p class="text-muted">Admin</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-center">
+                        <h6>TAGS:</h6>
+                        <p class="text-muted">Accessories, Diy, Handmade</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="https://www.facebook.com" class="facebook social-icon d-flex justify-content-center align-items-center" data-bs-toggle="tooltip" title=" Share on Facebook">
+                        <i class="facl facl-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com" class="twitter social-icon d-flex justify-content-center align-items-center " data-bs-toggle="tooltip" title=" Share on Twitter">
+                        <i class="facl facl-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com" class="facebook social-icon d-flex justify-content-center align-items-center " data-bs-toggle="tooltip" title=" Share on Email">
+                        <i class="facl facl-facebook"></i>
+                    </a>
+                    <a href="https://www.pinterest.com" class="pinterest social-icon d-flex justify-content-center align-items-center " data-bs-toggle="tooltip" title=" Share on Pinterest">
+                        <i class="facl facl-pinterest"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="tumblr social-icon d-flex justify-content-center align-items-center " data-bs-toggle="tooltip" title=" Share on tumblr">
+                        <i class="facl facl-tumblr"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="telegram social-icon d-flex justify-content-center align-items-center " data-bs-toggle="tooltip" title=" Share on Telegram">
+                        <i class="facl facl-telegram"></i>
+                    </a>
+                </div>
+                <div class="py-5 tooltip-back d-flex justify-content-center mt-4">
+                    <a routerLink="/single-portfolio-with-shop">
+                        <h1 class="m-0">
+                            <i class="pegk pe-7s-angle-left text-muted" data-toggle="tooltip" title=" Handmade Candle "></i>
+                        </h1>
+                    </a>
+                    <a routerLink="/single-portfolio-with-shop">
+                        <i class="pegk pe-7s-keypad text-muted mx-5" style="font-size: 40px;" data-toggle="tooltip" title="Back to Portfolio "></i>
+                    </a>
+                    <a routerLink="/single-portfolio-with-shop">
+                        <h1 class="m-0">
+                            <i class="pegk pe-7s-angle-right text-muted" data-toggle="tooltip" title="Handmade Craft "></i>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+                <h4 class="fw-bold">
+                    RELATED PORTFOLIO
+                </h4>
+            </div>
+            <div class="row py-2 blog-arrow kalles-blog-grid pb-5 mb-4  swiper shopSwiper">
+                <div class="swiper-wrapper">
+                    <div class="col-md-4 col-sm-6 px-2 slideshow__slide swiper-slide">
+                        <a routerLink="/shop" class="d-lg-block portfolio-img text-black text-center">
+                            <img src="assets/images/portfolio/p-01.jpg" class="img-fluid" alt="">
+                            <div class="position-absolute start-50 translate-middle portfolio-card-detail" style="z-index: 2;">
+                                <h6>WOMEN SHOES</h6>
+                                <p class="text-muted">Accessories, DIY, Handmade</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 px-2 slideshow__slide swiper-slide">
+                        <a routerLink="/shop" class="d-lg-block portfolio-img text-black text-center">
+                            <img src="assets/images/portfolio/p-02.jpg" class="img-fluid" alt="">
+                            <div class="position-absolute start-50 translate-middle portfolio-card-detail" style="z-index: 2;">
+                                <h6>KALLES WATCH</h6>
+                                <p class="text-muted">Accessories, DIY, Handmade</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 px-2 slideshow__slide swiper-slide">
+                        <a routerLink="/shop" class="d-lg-block portfolio-img text-black text-center">
+                            <img src="assets/images/portfolio/p-03.jpg" class="img-fluid" alt="">
+                            <div class="position-absolute start-50 translate-middle portfolio-card-detail" style="z-index: 2;">
+                                <h6>HANDMADE CRAFT</h6>
+                                <p class="text-muted">Accessories, DIY, Handmade</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 px-2 slideshow__slide swiper-slide">
+                        <a routerLink="/shop" class="d-lg-block portfolio-img text-black text-center">
+                            <img src="assets/images/portfolio/p-04.jpg" class="img-fluid" alt="">
+                            <div class="position-absolute start-50 translate-middle portfolio-card-detail" style="z-index: 2;">
+                                <h6>Branding Design</h6>
+                                <p class="text-muted">Accessories, DIY, Handmade</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 px-2 slideshow__slide swiper-slide">
+                        <a routerLink="/shop" class="d-lg-block portfolio-img text-black text-center">
+                            <img src="assets/images/portfolio/p-05.jpg" class="img-fluid" alt="">
+                            <div class="position-absolute start-50 translate-middle portfolio-card-detail" style="z-index: 2;">
+                                <h6>HAND CANDLE</h6>
+                                <p class="text-muted">Accessories, DIY, Handmade</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 px-2 slideshow__slide swiper-slide">
+                        <a routerLink="/shop" class="d-lg-block portfolio-img text-black text-center">
+                            <img src="assets/images/portfolio/p-06.jpg" class="img-fluid" alt="">
+                            <div class="position-absolute start-50 translate-middle portfolio-card-detail" style="z-index: 2;">
+                                <h6>HAND CANDLE</h6>
+                                <p class="text-muted">Accessories, DIY, Handmade</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-footer></app-footer>
+    <app-popup></app-popup>
+</div>
+<app-card-model></app-card-model>

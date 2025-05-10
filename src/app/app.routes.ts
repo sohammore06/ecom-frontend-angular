@@ -1,0 +1,224 @@
+import { Routes } from '@angular/router';
+import { IndexComponent } from './Pages/Home/index/index.component';
+import { HomeClassicComponent } from './Pages/Home/home-classic/home-classic.component';
+import { HomeVideoBannerComponent } from './Pages/Home/home-video-banner/home-video-banner.component';
+import { HomeCategoriesLinksComponent } from './Pages/Home/home-categories-links/home-categories-links.component';
+import { HomeStaticImageComponent } from './Pages/Home/home-static-image/home-static-image.component';
+import { HomeMetroComponent } from './Pages/Home/home-metro/home-metro.component';
+import { HomeLookbookComponent } from './Pages/Home/home-lookbook/home-lookbook.component';
+import { HomeParallaxComponent } from './Pages/Home/home-parallax/home-parallax.component';
+import { HomeInstagramShopComponent } from './Pages/Home/home-instagram-shop/home-instagram-shop.component';
+import { HomeMedicalComponent } from './Pages/Home/home-medical/home-medical.component';
+import { HomeFlowerComponent } from './Pages/Home/home-flower/home-flower.component';
+import { HomeFurnitureComponent } from './Pages/Home/home-furniture/home-furniture.component';
+import { HomeBagComponent } from './Pages/Home/home-bag/home-bag.component';
+import { HomeLingeriesComponent } from './Pages/Home/home-lingeries/home-lingeries.component';
+import { HomeCosmeticsComponent } from './Pages/Home/home-cosmetics/home-cosmetics.component';
+import { HomeGlassesComponent } from './Pages/Home/home-glasses/home-glasses.component';
+import { HomeShoesComponent } from './Pages/Home/home-shoes/home-shoes.component';
+import { HomeFashion9Component } from './Pages/Home/home-fashion9/home-fashion9.component';
+import { HomeLookbookCollectionComponent } from './Pages/Home/home-lookbook-collection/home-lookbook-collection.component';
+import { HomeFashionSimpleComponent } from './Pages/Home/home-fashion-simple/home-fashion-simple.component';
+import { HomeFashion10Component } from './Pages/Home/home-fashion10/home-fashion10.component';
+import { HomeDecorComponent } from './Pages/Home/home-decor/home-decor.component';
+import { HomeDecor2Component } from './Pages/Home/home-decor2/home-decor2.component';
+import { HomeFashionVerticalComponent } from './Pages/Home/home-fashion-vertical/home-fashion-vertical.component';
+import { HomeElectricComponent } from './Pages/Home/home-electric/home-electric.component';
+import { HomeElectricVerticalComponent } from './Pages/Home/home-electric-vertical/home-electric-vertical.component';
+import { HomeDigitalComponent } from './Pages/Home/home-digital/home-digital.component';
+import { HomeOneProductStoreComponent } from './Pages/Home/home-one-product-store/home-one-product-store.component';
+import { HomeHandmadeComponent } from './Pages/Home/home-handmade/home-handmade.component';
+import { HomeFashionTrendComponent } from './Pages/Home/home-fashion-trend/home-fashion-trend.component';
+import { HomeKidsComponent } from './Pages/Home/home-kids/home-kids.component';
+import { HomeSportComponent } from './Pages/Home/home-sport/home-sport.component';
+import { HomeJewelryComponent } from './Pages/Home/home-jewelry/home-jewelry.component';
+import { HomeHeader01Component } from './Pages/Home/Header/home-header-01/home-header-01.component';
+import { HomeHeader02Component } from './Pages/Home/Header/home-header-02/home-header-02.component';
+import { HomeHeader04Component } from './Pages/Home/Header/home-header-04/home-header-04.component';
+import { HomeHeader06Component } from './Pages/Home/Header/home-header-06/home-header-06.component';
+import { ShopFilterSidebarComponent } from './Pages/Home/Features/shop-filter-sidebar/shop-filter-sidebar.component';
+import { CheckoutComponent } from './Pages/Home/Features/checkout/checkout.component';
+import { HomeAgeVerifiedComponent } from './Pages/Home/Features/home-age-verified/home-age-verified.component';
+import { HomeRtlComponent } from './Pages/Home/Features/home-rtl/home-rtl.component';
+import { ProductDetailFrequentlyBoughtTogetherComponent } from './Pages/Home/Features/product-detail-frequently-bought-together/product-detail-frequently-bought-together.component';
+import { ProductDetailPickupAvailabilityComponent } from './Pages/Home/Features/product-detail-pickup-availability/product-detail-pickup-availability.component';
+import { ProductDetailVariantImagesGroupedComponent } from './Pages/Home/Features/product-detail-variant-images-grouped/product-detail-variant-images-grouped.component';
+import { ShopComponent } from './Pages/Home/Features/shop/shop.component';
+import { ShopGridListSwitcherComponent } from './Pages/Home/Features/shop-grid-list-switcher/shop-grid-list-switcher.component';
+import { ShopHiddenSidebarComponent } from './Pages/Home/Features/shop-hidden-sidebar/shop-hidden-sidebar.component';
+import { ShopRightSidebarComponent } from './Pages/Home/Features/shop-right-sidebar/shop-right-sidebar.component';
+import { ShoppingCartComponent } from './Pages/Shop/shopping-cart/shopping-cart.component';
+import { ShopPackeryLayoutComponent } from './Pages/Shop/shop-packery-layout/shop-packery-layout.component';
+import { ShopMasonryLayoutComponent } from './Pages/Shop/shop-masonry-layout/shop-masonry-layout.component';
+import { ShopLeftSidebarComponent } from './Pages/Shop/shop-left-sidebar/shop-left-sidebar.component';
+import { ShopLayoutComponent } from './Pages/Shop/shop-layout/shop-layout.component';
+import { ShopFullWidthLayoutComponent } from './Pages/Shop/shop-full-width-layout/shop-full-width-layout.component';
+import { ShopLoadMoreComponent } from './Pages/Shop/shop-load-more/shop-load-more.component';
+import { ShopCollectionComponent } from './Pages/Shop/shop-collection/shop-collection.component';
+import { PortfolioComponent } from './Pages/Portfolio/portfolio/portfolio.component';
+import { Portfolio3ColumnsComponent } from './Pages/Portfolio/portfolio-3-columns/portfolio-3-columns.component';
+import { Portfolio4ColumnsComponent } from './Pages/Portfolio/portfolio-4-columns/portfolio-4-columns.component';
+import { SinglePortfolioWithShopComponent } from './Pages/Portfolio/single-portfolio-with-shop/single-portfolio-with-shop.component';
+import { SinglePortfolioWithLookbookComponent } from './Pages/Portfolio/single-portfolio-with-lookbook/single-portfolio-with-lookbook.component';
+import { SinglePortfolioWithInstagramShopComponent } from './Pages/Portfolio/single-portfolio-with-instagram-shop/single-portfolio-with-instagram-shop.component';
+import { LookbookInPageComponent } from './Pages/Lookbook/lookbook-in-page/lookbook-in-page.component';
+import { BlogPostWithLookbookComponent } from './Pages/Lookbook/blog-post-with-lookbook/blog-post-with-lookbook.component';
+import { ProductDetailDescriptionWithLookbookComponent } from './Pages/Lookbook/product-detail-description-with-lookbook/product-detail-description-with-lookbook.component';
+import { ProductDetail360ViewerComponent } from './Pages/ProductDetail/product-detail-360-viewer/product-detail-360-viewer.component';
+import { ProductDetailAdvanceProductTypeComponent } from './Pages/ProductDetail/product-detail-advance-product-type/product-detail-advance-product-type.component';
+import { ProductDetailArModelsComponent } from './Pages/ProductDetail/product-detail-ar-models/product-detail-ar-models.component';
+import { ProductDetailBackInStockNotificationComponent } from './Pages/ProductDetail/product-detail-back-in-stock-notification/product-detail-back-in-stock-notification.component';
+import { ProductDetailDescriptionWithInstagramShopComponent } from './Pages/ProductDetail/product-detail-description-with-instagram-shop/product-detail-description-with-instagram-shop.component';
+import { ProductDetailDescriptionWithProductComponent } from './Pages/ProductDetail/product-detail-description-with-product/product-detail-description-with-product.component';
+import { ProductDetailExternalAffiliateComponent } from './Pages/ProductDetail/product-detail-external-affiliate/product-detail-external-affiliate.component';
+import { ProductDetailFullWidthComponent } from './Pages/ProductDetail/product-detail-full-width/product-detail-full-width.component';
+import { ProductDetailFullWidthAtcComponent } from './Pages/ProductDetail/product-detail-full-width-atc/product-detail-full-width-atc.component';
+import { ProductDetailGroupedProductComponent } from './Pages/ProductDetail/product-detail-grouped-product/product-detail-grouped-product.component';
+import { ProductDetailLayout01Component } from './Pages/ProductDetail/product-detail-layout-01/product-detail-layout-01.component';
+import { ProductDetailLayout02Component } from './Pages/ProductDetail/product-detail-layout-02/product-detail-layout-02.component';
+import { ProductDetailLayout03Component } from './Pages/ProductDetail/product-detail-layout-03/product-detail-layout-03.component';
+import { ProductDetailLeftSidebarComponent } from './Pages/ProductDetail/product-detail-left-sidebar/product-detail-left-sidebar.component';
+import { ProductDetailPreOrdersComponent } from './Pages/ProductDetail/product-detail-pre-orders/product-detail-pre-orders.component';
+import { ProductDetailProductStickyComponent } from './Pages/ProductDetail/product-detail-product-sticky/product-detail-product-sticky.component';
+import { ProductDetailProductVideoComponent } from './Pages/ProductDetail/product-detail-product-video/product-detail-product-video.component';
+import { ProductDetailRightSidebarComponent } from './Pages/ProductDetail/product-detail-right-sidebar/product-detail-right-sidebar.component';
+import { ProductDetailSidebarFullHeightComponent } from './Pages/ProductDetail/product-detail-sidebar-full-height/product-detail-sidebar-full-height.component';
+import { ProductDetailSimpleProductComponent } from './Pages/ProductDetail/product-detail-simple-product/product-detail-simple-product.component';
+import { ProductDetailSwatchColorComponent } from './Pages/ProductDetail/product-detail-swatch-color/product-detail-swatch-color.component';
+import { ProductDetailSwatchRadioComponent } from './Pages/ProductDetail/product-detail-swatch-radio/product-detail-swatch-radio.component';
+import { ProductDetailSwatchRadioColorComponent } from './Pages/ProductDetail/product-detail-swatch-radio-color/product-detail-swatch-radio-color.component';
+import { ProductDetailSwatchRectangleComponent } from './Pages/ProductDetail/product-detail-swatch-rectangle/product-detail-swatch-rectangle.component';
+import { ProductDetailSwatchRectangleColorComponent } from './Pages/ProductDetail/product-detail-swatch-rectangle-color/product-detail-swatch-rectangle-color.component';
+import { ProductDetailSwatchSimpleComponent } from './Pages/ProductDetail/product-detail-swatch-simple/product-detail-swatch-simple.component';
+import { ProductDetailSwatchSimpleColorComponent } from './Pages/ProductDetail/product-detail-swatch-simple-color/product-detail-swatch-simple-color.component';
+import { ProductDetailTabAccordionComponent } from './Pages/ProductDetail/product-detail-tab-accordion/product-detail-tab-accordion.component';
+import { ProductDetailThumbBottomComponent } from './Pages/ProductDetail/product-detail-thumb-bottom/product-detail-thumb-bottom.component';
+import { ProductDetailThumbRightComponent } from './Pages/ProductDetail/product-detail-thumb-right/product-detail-thumb-right.component';
+import { ProductDetailWithoutThumbnailComponent } from './Pages/ProductDetail/product-detail-without-thumbnail/product-detail-without-thumbnail.component';
+import { BlogGridComponent } from './Pages/Blog/blog-grid/blog-grid.component';
+import { BlogLeftSidebarComponent } from './Pages/Blog/blog-left-sidebar/blog-left-sidebar.component';
+import { BlogMasonryComponent } from './Pages/Blog/blog-masonry/blog-masonry.component';
+import { BlogPostWithInstagramShopComponent } from './Pages/Blog/blog-post-with-instagram-shop/blog-post-with-instagram-shop.component';
+import { BlogPostWithProductListingComponent } from './Pages/Blog/blog-post-with-product-listing/blog-post-with-product-listing.component';
+import { BlogRightSidebarComponent } from './Pages/Blog/blog-right-sidebar/blog-right-sidebar.component';
+import { WishlistComponent } from './Pages/wishlist/wishlist.component';
+
+export const routes: Routes = [
+    { path: '', component: IndexComponent },
+    { path: 'home-classic', component: HomeClassicComponent },
+    { path: 'home-video-banner', component: HomeVideoBannerComponent },
+    { path: 'home-categories-links', component: HomeCategoriesLinksComponent },
+    { path: 'home-static-image', component: HomeStaticImageComponent },
+    { path: 'home-metro', component: HomeMetroComponent },
+    { path: 'home-lookbook', component: HomeLookbookComponent },
+    { path: 'home-parallax', component: HomeParallaxComponent },
+    { path: 'home-instagram-shop', component: HomeInstagramShopComponent },
+    { path: 'home-medical', component: HomeMedicalComponent },
+    { path: 'home-flower', component: HomeFlowerComponent },
+    { path: 'home-furniture', component: HomeFurnitureComponent },
+    { path: 'home-bag', component: HomeBagComponent },
+    { path: 'home-lingeries', component: HomeLingeriesComponent },
+    { path: 'home-cosmetics', component: HomeCosmeticsComponent },
+    { path: 'home-glasses', component: HomeGlassesComponent },
+    { path: 'home-shoes', component: HomeShoesComponent },
+
+    { path: 'home-fashion9', component: HomeFashion9Component },
+    { path: 'home-lookbook-collection', component: HomeLookbookCollectionComponent },
+    { path: 'home-fashion-simple', component: HomeFashionSimpleComponent },
+    { path: 'home-fashion10', component: HomeFashion10Component },
+    { path: 'home-decor', component: HomeDecorComponent },
+    { path: 'home-decor2', component: HomeDecor2Component },
+    { path: 'home-fashion-vertical', component: HomeFashionVerticalComponent },
+    { path: 'home-electric', component: HomeElectricComponent },
+    { path: 'home-electric-vertical', component: HomeElectricVerticalComponent },
+    { path: 'home-digital', component: HomeDigitalComponent },
+    { path: 'home-one-product-store', component: HomeOneProductStoreComponent },
+    { path: 'home-handmade', component: HomeHandmadeComponent },
+    { path: 'home-fashion-trend', component: HomeFashionTrendComponent },
+    { path: 'home-kids', component: HomeKidsComponent },
+    { path: 'home-sport', component: HomeSportComponent },
+    { path: 'home-jewelry', component: HomeJewelryComponent },
+    
+    { path: 'home-header-01', component: HomeHeader01Component },
+    { path: 'home-header-02', component: HomeHeader02Component },
+    { path: 'home-header-04', component: HomeHeader04Component },
+    { path: 'home-header-06', component: HomeHeader06Component },
+
+    
+    { path: 'shop-filter-sidebar', component: ShopFilterSidebarComponent },
+    { path: 'checkout', component: CheckoutComponent },
+    { path: 'home-age-verified', component: HomeAgeVerifiedComponent },
+    { path: 'home-rtl', component: HomeRtlComponent },
+    { path: 'product-detail-frequently-bought-together', component: ProductDetailFrequentlyBoughtTogetherComponent },
+    { path: 'product-detail-pickup-availability', component: ProductDetailPickupAvailabilityComponent },
+    { path: 'product-detail-variant-images-grouped', component: ProductDetailVariantImagesGroupedComponent },
+    { path: 'shop', component: ShopComponent },
+    { path: 'shop-filter-sidebar', component: ShopFilterSidebarComponent },
+    { path: 'shop-grid-list-switcher', component: ShopGridListSwitcherComponent },
+    { path: 'shop-hidden-sidebar', component: ShopHiddenSidebarComponent },
+    { path: 'shop-right-sidebar', component: ShopRightSidebarComponent },
+
+    { path: 'shopping-cart', component: ShoppingCartComponent },
+    { path: 'shop-right-sidebar', component: ShopRightSidebarComponent },
+    { path: 'shop-packery-layout', component: ShopPackeryLayoutComponent },
+    { path: 'shop-masonry-layout', component: ShopMasonryLayoutComponent },
+    { path: 'shop-left-sidebar', component: ShopLeftSidebarComponent },
+    { path: 'shop-1600px-layout', component: ShopLayoutComponent },
+    { path: 'shop-hidden-sidebar', component: ShopHiddenSidebarComponent },
+    { path: 'shop-full-width-layout', component: ShopFullWidthLayoutComponent },
+    { path: 'shop-load-more', component: ShopLoadMoreComponent },
+    { path: 'shop-collection', component: ShopCollectionComponent },
+
+    { path: 'portfolio', component: PortfolioComponent },
+    { path: 'portfolio-3-columns', component: Portfolio3ColumnsComponent },
+    { path: 'portfolio-4-columns', component: Portfolio4ColumnsComponent },
+    { path: 'single-portfolio-with-shop', component: SinglePortfolioWithShopComponent },
+    { path: 'single-portfolio-with-lookbook', component: SinglePortfolioWithLookbookComponent },
+    { path: 'single-portfolio-with-instagram-shop', component: SinglePortfolioWithInstagramShopComponent },
+    
+    { path: 'lookbook-in-page', component: LookbookInPageComponent },
+    { path: 'blog-post-with-lookbook', component: BlogPostWithLookbookComponent },
+    { path: 'product-detail-description-with-lookbook', component: ProductDetailDescriptionWithLookbookComponent },
+
+    { path: 'product-detail-360-viewer', component: ProductDetail360ViewerComponent },
+    { path: 'product-detail-advance-product-type', component: ProductDetailAdvanceProductTypeComponent },
+    { path: 'product-detail-3d-ar-models', component: ProductDetailArModelsComponent },
+    { path: 'product-detail-back-in-stock-notification', component: ProductDetailBackInStockNotificationComponent },
+    { path: 'product-detail-description-with-instagram-shop', component: ProductDetailDescriptionWithInstagramShopComponent },
+    { path: 'product-detail-description-with-product', component: ProductDetailDescriptionWithProductComponent },
+    { path: 'product-detail-external-affiliate', component: ProductDetailExternalAffiliateComponent },
+    { path: 'product-detail-full-width', component: ProductDetailFullWidthComponent },
+    { path: 'product-detail-full-width-atc', component: ProductDetailFullWidthAtcComponent },
+    { path: 'product-detail-grouped-product', component: ProductDetailGroupedProductComponent },
+    { path: 'product-detail-layout-01', component: ProductDetailLayout01Component },
+    { path: 'product-detail-layout-02', component: ProductDetailLayout02Component },
+    { path: 'product-detail-layout-03', component: ProductDetailLayout03Component },
+    { path: 'product-detail-left-sidebar', component: ProductDetailLeftSidebarComponent },
+    { path: 'product-detail-pre-orders', component: ProductDetailPreOrdersComponent },
+    { path: 'product-detail-product-sticky', component: ProductDetailProductStickyComponent },
+    { path: 'product-detail-product-video', component: ProductDetailProductVideoComponent },
+    { path: 'product-detail-right-sidebar', component: ProductDetailRightSidebarComponent },
+    { path: 'product-detail-sidebar-full-height', component: ProductDetailSidebarFullHeightComponent },
+    { path: 'product-detail-simple-product', component: ProductDetailSimpleProductComponent },
+    { path: 'product-detail-swatch-color', component: ProductDetailSwatchColorComponent },
+    { path: 'product-detail-swatch-radio', component: ProductDetailSwatchRadioComponent },
+    { path: 'product-detail-swatch-radio-color', component: ProductDetailSwatchRadioColorComponent },
+    { path: 'product-detail-swatch-rectangle', component: ProductDetailSwatchRectangleComponent },
+    { path: 'product-detail-swatch-rectangle-color', component: ProductDetailSwatchRectangleColorComponent },
+    { path: 'product-detail-swatch-simple', component: ProductDetailSwatchSimpleComponent },
+    { path: 'product-detail-swatch-simple-color', component: ProductDetailSwatchSimpleColorComponent },
+    { path: 'product-detail-tab-accordion', component: ProductDetailTabAccordionComponent },
+    { path: 'product-detail-thumb-bottom', component: ProductDetailThumbBottomComponent },
+    { path: 'product-detail-thumb-right', component: ProductDetailThumbRightComponent },
+    { path: 'product-detail-without-thumbnail', component: ProductDetailWithoutThumbnailComponent },
+
+    { path: 'blog-grid', component: BlogGridComponent },
+    { path: 'blog-left-sidebar', component: BlogLeftSidebarComponent },
+    { path: 'blog-masonry', component: BlogMasonryComponent },
+    { path: 'blog-post-with-instagram-shop', component: BlogPostWithInstagramShopComponent },
+    { path: 'blog-post-with-product-listing', component: BlogPostWithProductListingComponent },
+    { path: 'blog-right-sidebar', component: BlogRightSidebarComponent },
+
+    { path: 'wishlist', component: WishlistComponent },
+
+];

@@ -1,0 +1,85 @@
+{
+  "hash": "10ef06a3",
+  "configHash": "3588901d",
+  "lockfileHash": "6f93bf7a",
+  "browserHash": "c194d40d",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "bdb91602",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "0f9b210f",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "171f5aef",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "ed5c4b06",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "5f0b9a23",
+      "needsInterop": false
+    },
+    "aos": {
+      "src": "../../../../../../node_modules/aos/dist/aos.js",
+      "file": "aos.js",
+      "fileHash": "5999b87a",
+      "needsInterop": true
+    },
+    "bootstrap": {
+      "src": "../../../../../../node_modules/bootstrap/dist/js/bootstrap.esm.js",
+      "file": "bootstrap.js",
+      "fileHash": "95df0cea",
+      "needsInterop": false
+    },
+    "jarallax": {
+      "src": "../../../../../../node_modules/jarallax/dist/jarallax.esm.js",
+      "file": "jarallax.js",
+      "fileHash": "c75eb153",
+      "needsInterop": false
+    },
+    "swiper": {
+      "src": "../../../../../../node_modules/swiper/swiper.mjs",
+      "file": "swiper.js",
+      "fileHash": "af9e46d8",
+      "needsInterop": false
+    },
+    "swiper/element/bundle": {
+      "src": "../../../../../../node_modules/swiper/swiper-element-bundle.mjs",
+      "file": "swiper_element_bundle.js",
+      "fileHash": "6691087b",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-J4NUPXOQ": {
+      "file": "chunk-J4NUPXOQ.js"
+    },
+    "chunk-5JUNG7SN": {
+      "file": "chunk-5JUNG7SN.js"
+    },
+    "chunk-7HHQ57ZU": {
+      "file": "chunk-7HHQ57ZU.js"
+    },
+    "chunk-DRFXTUGZ": {
+      "file": "chunk-DRFXTUGZ.js"
+    },
+    "chunk-CX3I3NQG": {
+      "file": "chunk-CX3I3NQG.js"
+    }
+  }
+}

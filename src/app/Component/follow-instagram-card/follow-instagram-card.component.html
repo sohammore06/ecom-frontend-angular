@@ -1,0 +1,20 @@
+<section>
+    <div class="container-fluid">
+        <div class="position-relative">
+            <div class="follow-insta-card text-center">
+                <p class="fs-16 font-secondary fst-italic mb-1">Find us on Instagram</p>
+                <h4 class="fs-18">&#64;THE4STUDIO</h4>
+            </div>
+            <div class="row swiper cardSwiper" dir="ltr">
+                <div class="swiper-wrapper">
+                    <div *ngFor="let image of images" class="col-lg-2 col-md-3 col-6 swiper-slide">
+                        <div class="insta-card position-relative">
+                            <img [src]="image" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

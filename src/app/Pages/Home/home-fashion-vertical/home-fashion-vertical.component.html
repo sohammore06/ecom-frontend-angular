@@ -1,0 +1,373 @@
+<app-top-banner className="vertical-wrpper"></app-top-banner>
+<app-header-vertical></app-header-vertical>
+<div class="page-vertical-wrapper">
+    <div class="kalles-home-section type_slideshow type_carousel swiper fashionSwiper">
+        <div class="slideshow swiper-wrapper">
+            <div class="slideshow__slide w-100 swiper-slide" *ngFor="let slide of slides" [style.background-image]="'url(' + slide.backgroundImage + ')'">
+
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div [class]="slide.alignClass">
+                            <div data-aos="fade-right" data-aos-delay="300">
+                                <h4 class="fs-18 fw-medium">{{ slide.title }}</h4>
+                                <h1 class="fw-semibold mb-3">{{ slide.subtitle }}</h1>
+                                <a class="btn btn-dark rounded-0 min-w-150 text-white" [href]="slide.buttonLink">
+                                    {{ slide.buttonText }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="cat-section">
+        <div class="container">
+            <div class="row g-xl-4 g-2">
+                <div class="col-md-6">
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-570">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-fashion-vertical/cat-women.jpg');"></div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Women</div>
+                        </div>
+                    </a>
+                    <div class="row gx-xl-4 gx-2 mt-xl-4 mt-2">
+                        <div class="col-sm-6">
+                            <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-300">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-fashion-vertical/cat-caps-and-hats.jpg');"></div>
+                                <div class="cat-grid-button text-body">
+                                    <div class="cat_grid_item__title">Caps&Hats</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-300">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-fashion-vertical/cat-foot-wear.jpeg');">
+                                </div>
+                                <div class="cat-grid-button text-body">
+                                    <div class="cat_grid_item__title">Footwear</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-300 mb-xl-4 mb-2">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-fashion-vertical/cat-accessories.jpg');background-position: center;">
+                        </div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Accessoies</div>
+                        </div>
+                    </a>
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-570">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-classic/cat-watch.jpg'); background-position: center;">
+                        </div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Watches</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid px-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center">
+                        <div class="mb-2">
+                            <h3 class="section-title position-relative flex">
+                                <span>NEW ARRIVAL</span>
+                            </h3>
+                        </div>
+                        <span class="section-subtitle sub-title font-secondary fst-italic fs-14 text-muted">New product of our store</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper verticalSwiper row mt-4 pt-2 tranding-card " dir="ltr">
+                <div class="swiper-wrapper">
+                    <div *ngFor="let product of products" class="col-md-3 col-6 px-lg-12 px-2 swiper-slide">
+                        <div [ngClass]="{'topbar-product-card': true, 'pb-3': true}" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                            <div class="position-relative overflow-hidden">
+
+                                <span *ngIf="product.newLabel" class="new-label bg-success text-white rounded-circle text-center" [ngClass]="{'bg-success': product.newLabel === 'New', 'bg-danger': product.newLabel.includes('%')}">
+                                    {{ product.newLabel }}
+                                </span>
+
+
+                                <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="" class="img-fluid">
+
+
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                    <i class="facl facl-heart-o text-white"></i>
+                                </a>
+
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14">
+                                        <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                    </a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                        <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                    </button>
+                                </div>
+
+
+                                <p class="product-size mb-0 text-center text-white fw-medium">{{ product.sizes }}</p>
+                            </div>
+
+
+                            <a routerLink="/product-detail-layout-01" class="mt-3 d-block">
+                                <h6 class="mb-1">{{ product.name }}</h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span *ngIf="product.oldPrice"><del>{{ product.oldPrice }}</del></span>
+                                    <span [class.text-danger]="product.oldPrice">{{ product.price }}</span>
+                                </p>
+                            </a>
+
+
+                            <div *ngIf="product.colorImages.length > 0" class="product-color-list mt-2 gap-2 d-flex align-items-center">
+                                <a *ngFor="let colorImage of product.colorImages" href="javascript:void(0);" (mouseover)="product.imageUrl = colorImage" class="d-inline-block bg-body-tertiary rounded-circle" [style.backgroundImage]="'url(' + colorImage + ')'" [style.backgroundSize]="'cover'"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="banner-section position-relative">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <a href="javascript:void(0);" class="position-relative hover-zoom d-block">
+                        <img src="assets/images/home-fashion-vertical/banner-01.jpg" alt="" class="img-fluid hover-zoom-img">
+                        <div class="position-absolute start-0 start-0 end-0 top-0 bottom-0 d-flex align-items-center justify-content-center">
+                            <div class="text-center text-white">
+                                <h4 class="fs-24">LOOKBOOK 2021</h4>
+                                <h6 class="mb-0">MAKE LOVE THIS LOOK</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="javascript:void(0);" class="position-relative hover-zoom d-block">
+                        <img src="assets/images/home-fashion-vertical/banner-02.jpg" alt="" class="img-fluid hover-zoom-img">
+                        <div class="position-absolute start-0 start-0 end-0 top-0 bottom-0 d-flex align-items-center justify-content-center">
+                            <div class="text-center text-white">
+                                <h6 class="text-capitalize mb-2">Summer Sale</h6>
+                                <h1 class="mb-0">UP TO 70%</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="type_tab_collection">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center">
+                        <div class="mb-2">
+                            <h3 class="section-title position-relative text-uppercase">
+                                <span>OUR PRODUCTS</span>
+                            </h3>
+                        </div>
+                        <span class="section-subtitle sub-title font-secondary fst-italic fs-14 text-muted">Top sale in
+                            this week</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <ul class="nav tab_header gap-lg-4 justify-content-center mt-4 mb-0" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill active" id="best-seller-tab" data-bs-toggle="pill" data-bs-target="#best-seller" type="button" role="tab" aria-controls="best-seller" aria-selected="true">Best Seller</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill" id="featured-tab" data-bs-toggle="pill" data-bs-target="#featured" type="button" role="tab" aria-controls="featured" aria-selected="false">Featured</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill" id="sale-tab" data-bs-toggle="pill" data-bs-target="#sale" type="button" role="tab" aria-controls="sale" aria-selected="false">Sale</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill" id="top-sale-tab" data-bs-toggle="pill" data-bs-target="#top-sale" type="button" role="tab" aria-controls="top-sale" aria-selected="false">Top Sale</button>
+                    </li>
+                </ul>
+                <div class="tab-content mt-4" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="best-seller" role="tabpanel" aria-labelledby="best-seller-tab" tabindex="0">
+                        <div class="row g-4">
+                            <div *ngFor="let product of products2" class="col-md-3 col-6">
+                                <div class="topbar-product-card pb-3" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                                    <div class="position-relative overflow-hidden">
+                                        <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="" class="img-fluid object-fit-cover w-100">
+                                        <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                            <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                                <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                            </button>
+                                        </div>
+                                        <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                                <i class="iccl iccl-eye fw-semibold"></i>
+                                            </a>
+                                            <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                                <i class="iccl iccl-cart fw-semibold"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a [href]="product.productLink" class="mt-3 d-block">
+                                        <h6 class="mb-1">{{ product.title }}</h6>
+                                        <p class="mb-0 fs-14 text-muted">
+                                            <span *ngIf="product.salePrice">{{ product.salePrice }}</span>
+                                            <span *ngIf="!product.salePrice">{{ product.price }}</span>
+                                        </p>
+                                    </a>
+                                    <div *ngIf="product.colors.length" class="product-color-list mt-2 gap-2 d-flex align-items-center">
+                                        <a *ngFor="let color of product.colors" [style.background]="color.url" [class]="color.colorClass" class="d-inline-block rounded-circle"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab" tabindex="0">
+                        <div class="row g-4">
+                            <div *ngFor="let product of products3" class="col-md-3 col-6">
+                                <div class="topbar-product-card pb-3" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                                    <div class="position-relative overflow-hidden">
+                                        <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="" class="img-fluid object-fit-cover w-100">
+                                        <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                            <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                                <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                            </button>
+                                        </div>
+                                        <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                                <i class="iccl iccl-eye fw-semibold"></i>
+                                            </a>
+                                            <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                                <i class="iccl iccl-cart fw-semibold"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a [href]="product.productLink" class="mt-3 d-block">
+                                        <h6 class="mb-1">{{ product.title }}</h6>
+                                        <p class="mb-0 fs-14 text-muted">
+                                            <span *ngIf="product.salePrice">{{ product.salePrice }}</span>
+                                            <span *ngIf="!product.salePrice">{{ product.price }}</span>
+                                        </p>
+                                    </a>
+                                    <div *ngIf="product.colors.length" class="product-color-list mt-2 gap-2 d-flex align-items-center">
+                                        <a *ngFor="let color of product.colors" [style.background]="color.url" [class]="color.colorClass" class="d-inline-block rounded-circle"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sale" role="tabpanel" aria-labelledby="sale-tab" tabindex="0">
+                        <div class="row g-4">
+                            <div *ngFor="let product of products4" class="col-md-3 col-6">
+                                <div class="topbar-product-card pb-3" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                                    <div class="position-relative overflow-hidden">
+                                        <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="" class="img-fluid object-fit-cover w-100">
+                                        <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                            <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                                <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                            </button>
+                                        </div>
+                                        <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                                <i class="iccl iccl-eye fw-semibold"></i>
+                                            </a>
+                                            <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                                <i class="iccl iccl-cart fw-semibold"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a [href]="product.productLink" class="mt-3 d-block">
+                                        <h6 class="mb-1">{{ product.title }}</h6>
+                                        <p class="mb-0 fs-14 text-muted">
+                                            <span *ngIf="product.salePrice">{{ product.salePrice }}</span>
+                                            <span *ngIf="!product.salePrice">{{ product.price }}</span>
+                                        </p>
+                                    </a>
+                                    <div *ngIf="product.colors.length" class="product-color-list mt-2 gap-2 d-flex align-items-center">
+                                        <a *ngFor="let color of product.colors" [style.background]="color.url" [class]="color.colorClass" class="d-inline-block rounded-circle"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="top-sale" role="tabpanel" aria-labelledby="top-sale-tab" tabindex="0">
+                        <div class="row g-4">
+                            <div *ngFor="let product of products5" class="col-md-3 col-6">
+                                <div class="topbar-product-card pb-3" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                                    <div class="position-relative overflow-hidden">
+                                        <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="" class="img-fluid object-fit-cover w-100">
+                                        <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                            <i class="facl facl-heart-o text-white"></i>
+                                        </a>
+                                        <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                            <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                                <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                            </button>
+                                        </div>
+                                        <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                            <a href="{{ product.quickViewLink }}" data-bs-toggle="modal" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                                <i class="iccl iccl-eye fw-semibold"></i>
+                                            </a>
+                                            <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                                <i class="iccl iccl-cart fw-semibold"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a [href]="product.productLink" class="mt-3 d-block">
+                                        <h6 class="mb-1">{{ product.title }}</h6>
+                                        <p class="mb-0 fs-14 text-muted">
+                                            <span *ngIf="product.salePrice">{{ product.salePrice }}</span>
+                                            <span *ngIf="!product.salePrice">{{ product.price }}</span>
+                                        </p>
+                                    </a>
+                                    <div *ngIf="product.colors.length" class="product-color-list mt-2 gap-2 d-flex align-items-center">
+                                        <a *ngFor="let color of product.colors" [style.background]="color.url" [class]="color.colorClass" class="d-inline-block rounded-circle"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-latest-blog></app-latest-blog>
+    <app-follow-instagram></app-follow-instagram>
+    <app-shipping></app-shipping>
+    <app-footer></app-footer>
+    <app-popup></app-popup>
+</div>
+<app-card-model></app-card-model>

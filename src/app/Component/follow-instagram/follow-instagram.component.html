@@ -1,0 +1,25 @@
+<section>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center mb-4">
+                    <div>
+                        <h3 class="section-title position-relative flex text-uppercase">
+                            <span>&#64; Follow us on Instagram</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row swiper instaSwiper" dir="ltr">
+            <div class="swiper-wrapper">
+                <div class="col-lg-2 col-md-3 col-6 swiper-slide" *ngFor="let image of instagramImages; let i = index">
+                    <div class="insta-card position-relative">
+                        <img [src]="image.src" alt="Instagram Image" class="img-fluid">
+                        <a href="javascript:void(0);" (click)="openModal()" class="card-spin position-absolute fs-14 bg-dark text-white rounded-circle fw-semibold" [ngClass]="image.positionClass">{{ image.label }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

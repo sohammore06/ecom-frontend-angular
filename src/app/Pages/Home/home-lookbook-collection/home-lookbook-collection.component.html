@@ -1,0 +1,407 @@
+<app-top-banner></app-top-banner>
+<app-header-fashion></app-header-fashion>
+<div>
+    <div class="kalles-home-section type_slideshow swiper lookbookSwiper">
+        <div class="slideshow swiper-wrapper">
+            <div *ngFor="let slide of slides" class="swiper-slide slideshow__slide w-100" [style.backgroundImage]="'url(' + slide.image + ')'">
+                <div class="container">
+                    <div class="row" [ngClass]="slide.justify ? 'justify-content-end' : ''">
+                        <div class="col-lg-7">
+                            <div [ngClass]="slide.alignClass" data-aos="fade-right" in this week-aos-delay="300">
+                                <h4 class="fs-18 fw-medium">{{ slide.subtitle }}</h4>
+                                <h1 class="display-4 fw-semibold mb-3">{{ slide.title }}</h1>
+                                <a class="btn btn-dark text-white rounded-0 min-w-150" routerLink="/shop-filter-sidebar">
+                                    Explore Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="cat-section pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-624">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/cat-women.jpg');">
+                        </div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Women</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-300 mb-4">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/cat-accessories.jpeg'); background-position: center;">
+                        </div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Accessories</div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-300">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/cat-shoes.jpeg'); background-position: center;">
+                        </div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Shoes</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-624">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/cat-watches.jpg');">
+                        </div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Watches</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row g-lg-4 g-3 gy-md-0 gy-4 align-items-center">
+                <div *ngFor="let item of bannerItems" class="col-md-4">
+                    <a *ngIf="!item.product" [href]="item.link" class="kalles-banner-promotion d-block">
+                        <img [src]="item.image" alt="" class="img-fluid">
+                        <div [ngClass]="item.positionClass" class="p-20 position-absolute text-body">
+                            <p class="text-uppercase fw-medium fs-14 mb-1">{{ item.subTitle }}</p>
+                            <h3 class="fs-35">{{ item.title }}</h3>
+                            <p *ngIf="item.description" class="text-muted mb-0">{{ item.description }}</p>
+                            <button *ngIf="item.buttonText" class="btn btn-custom-dark fw-medium min-w-150 rounded-pill">
+                                {{ item.buttonText }}
+                            </button>
+                        </div>
+                    </a>
+
+                    <div *ngIf="item.product" class="kalles-banner-promotion topbar-product-card">
+                        <div class="position-relative overflow-hidden">
+                            <span class="new-label bg-danger text-white rounded-circle"> -{{ item.discount }}% </span>
+                            <img [src]="item.image" alt="" class="img-fluid">
+                            <div class="product-size text-center">
+                                <h6 class="mb-1"><a href="{{ item.productLink }}" class="main_link">{{ item.productName }}</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <del>${{ item.oldPrice }}</del>
+                                    <span class="text-danger">${{ item.newPrice }}</span>
+                                </p>
+                            </div>
+                            <div class="count-time" data-date="10-10-2028">
+                                <ul class="list-unstyled d-flex gap-2 align-items-center text-center justify-content-center mb-0">
+                                    <li class="bg-dark text-white fs-12 rounded"><span class="days text-white fs-14">0</span> days</li>
+                                    <li class="bg-dark text-white fs-12 rounded"><span class="text-white fs-14">00</span> Hours</li>
+                                    <li class="bg-dark text-white fs-12 rounded"><span class="min text-white fs-14">00</span> Minutes</li>
+                                    <li class="bg-dark text-white fs-12 rounded"><span class="sc text-white fs-14">00</span> Seconds</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="mt-5 pt-5">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center">
+                        <div class="mb-2">
+                            <h3 class="section-title position-relative flex">
+                                <span>TRENDING</span>
+                            </h3>
+                        </div>
+                        <span class="section-subtitle sub-title font-secondary fst-italic fs-14 text-muted">Top view in
+                            this week</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lookbookSwiper2 swiper row my-4 py-2 swiper tranding-card">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide col-md-3 col-6 col-lg-2 px-lg-12 px-2" *ngFor="let product of products">
+                        <div class="topbar-product-card pb-3">
+                            <div class="position-relative overflow-hidden">
+                                <span *ngIf="product.newLabel" class="new-label bg-success text-white rounded-circle text-center">{{ product.newLabel }}</span>
+                                <img [src]="product.isHovered ? product.hoverImageUrl : product.imageUrl" alt="Product Image">
+                                <a href="javascript:void(0);" class="d-lg-none position-absolute " style="z-index: 1; top:10px; left:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o text-white"></i></a>
+                                <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o text-white"></i></a>
+                                <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1;">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;"><i class="iccl iccl-eye fw-semibold"></i></a>
+                                    <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')" class="btn rounded-pill fs-14">
+                                        <i class="iccl iccl-cart fw-semibold"></i></button>
+                                </div>
+                                <p class="product-size mb-0 text-center text-white fw-medium">{{ product.size }}</p>
+                            </div>
+                            <a [href]="product.detailsLink" class="mt-3 d-block">
+                                <h6 class="mb-1">{{ product.title }}</h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>{{ product.price }}</span>
+                                    <del *ngIf="product.originalPrice">{{ product.originalPrice }}</del>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cat-section pb-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center">
+                        <div class="mb-2">
+                            <h3 class="section-title position-relative flex text-uppercase">
+                                <span>Lookbook Collection</span>
+                            </h3>
+                        </div>
+                        <span class="section-subtitle sub-title font-secondary fst-italic fs-14 text-muted">Spring
+                            summer 2024 lookbook</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="position-relative cat_grid_item overflow-hidden h-350">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/bg-pin-01.jpeg');">
+                                </div>
+                                <div class="pin-type position-absolute position-09 z-2">
+                                    <span class="zoompin"></span>
+                                    <a href="#pinType1" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                                        <i class="nav_link_icon position-relative"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="position-relative cat_grid_item overflow-hidden h-350">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/bg-pin-02.jpeg');">
+                                </div>
+                                <div class="pin-type position-absolute position-08 z-2">
+                                    <span class="zoompin"></span>
+                                    <a href="#pinType2" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                                        <i class="nav_link_icon position-relative"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="position-relative cat_grid_item overflow-hidden h-350">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/bg-pin-04.jpg');">
+                                </div>
+                                <div class="pin-type position-absolute position-04 z-2">
+                                    <span class="zoompin"></span>
+                                    <a href="#pinType3" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                                        <i class="nav_link_icon position-relative"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="position-relative cat_grid_item overflow-hidden h-350">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/bg-pin-05.jpg');">
+                                </div>
+                                <div class="pin-type position-absolute position-04 z-2">
+                                    <span class="zoompin"></span>
+                                    <a href="#pinType4" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                                        <i class="nav_link_icon position-relative"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative cat_grid_item overflow-hidden h-100">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-lookbook-collection/bg-pin-03.jpg');">
+                        </div>
+                        <div class="pin-type position-absolute position-06 z-2">
+                            <span class="zoompin"></span>
+                            <a href="#pinType5" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                                <i class="nav_link_icon position-relative"></i>
+                            </a>
+                        </div>
+                        <div class="pin-type position-absolute position-09 z-2">
+                            <span class="zoompin"></span>
+                            <a href="#pinType6" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                                <i class="nav_link_icon position-relative"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-overl pin_popup" id="pinType1" tabindex="-1" aria-labelledby="pinType1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook-collection/pr-pin-12.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" data-toggle="modal" data-target="#cardModal" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">New Look
+                                        lace up trainer</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$14.99</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-overl pin_popup" id="pinType2" tabindex="-1" aria-labelledby="pinType2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/products/pr-41.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" data-toggle="modal" data-target="#cardModal" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Tote Bag
+                                        Cream Cord</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$16.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-overl pin_popup" id="pinType3" tabindex="-1" aria-labelledby="pinType3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook-collection/pr-pin-52.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" data-toggle="modal" data-target="#cardModal" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Stripe
+                                        Long Sleeve Top</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$15.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-overl pin_popup" id="pinType4" tabindex="-1" aria-labelledby="pinType4Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook-collection/pr-pin-62.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" data-toggle="modal" data-target="#cardModal" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Boxy
+                                        Sweatshirt Stripe</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$18.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-overl pin_popup" id="pinType5" tabindex="-1" aria-labelledby="pinType5Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook-collection/pr-pin-42.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" data-toggle="modal" data-target="#cardModal" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Men Knit
+                                        Sweater</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$95.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-overl pin_popup" id="pinType6" tabindex="-1" aria-labelledby="pinType6Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook-collection/pr-pin-32.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" data-toggle="modal" data-target="#cardModal" class="btn rounded-pill fs-14"><span>Quick Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">High
+                                        Waist Skinny Jean</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$95.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-latest-blog></app-latest-blog>
+    <app-follow-instagram></app-follow-instagram>
+    <app-shipping></app-shipping>
+    <app-footer></app-footer>
+    <app-popup></app-popup>
+</div>
+<app-card-model></app-card-model>

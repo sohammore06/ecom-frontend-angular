@@ -1,0 +1,379 @@
+<app-top-banner></app-top-banner>
+
+<app-header2></app-header2>
+<div>
+    <section class="position-relative home-lookbook-section">
+        <div class="slideshow swiper productSwiper">
+            <div class="slideshow swiper-wrapper">
+                <div *ngFor="let slide of slides" class="slideshow__slide w-100 kalles-lookbook-home swiper-slide" [style.backgroundImage]="'url(' + slide.imageUrl + ')'">
+                    <div *ngFor="let pin of slide.pins" class="pin-type position-absolute" [ngClass]="pin.positionClass">
+                        <span class="zoompin"></span>
+                        <a [href]="'#' + pin.id" class="{{ pin.colorClass }} text-white rounded-circle d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal">
+                            <i class="nav_link_icon position-relative"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-overl pin_popup" id="pinType1" tabindex="-1" aria-labelledby="pinType1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <span class="new-label bg-danger text-white rounded-circle"> -34% </span>
+                                <img src="assets/images/home-lookbook/pinner-p-02.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Organza
+                                        Hair Scrunchie</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <del>$5.00</del>
+                                    <span class="text-danger">$3.50</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl pin_popup" id="pinType2" tabindex="-1" aria-labelledby="pinType2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <span class="new-label bg-danger text-white rounded-circle"> -56% </span>
+                                <img src="assets/images/home-lookbook/pinner-p-04.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Striped
+                                        Long Sleeve Top</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <del>$45.00</del>
+                                    <span class="text-danger">$20.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl modal-md" id="pinType3" tabindex="-1" aria-labelledby="pinType3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="fs-16 mb-0 fw-normal">Sweatshirt in Stripe</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted mb-0">With groundbreaking water resistant capabilities, The Mission has the
+                            highest waterproof rating of any smartwatch on the market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl pin_popup" id="pinType4" tabindex="-1" aria-labelledby="pinType4Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook/pinner-p-08.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Men Knit
+                                        Sweater</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$95.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl pin_popup" id="pinType5" tabindex="-1" aria-labelledby="pinType5Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook/pinner-p-10.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">High
+                                        Waist Skinny Jean</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$95.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl pin_popup" id="pinType6" tabindex="-1" aria-labelledby="pinType6Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card" class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <img src="assets/images/home-lookbook/pinner-p-12.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a routerLink="/product-detail-layout-01" class="product-title">Circle
+                                        Snapback Cap</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span>$25.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl modal-md" id="pinType7" tabindex="-1" aria-labelledby="pinType3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="fs-16 mb-0 fw-normal">Graphic T-shirt</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted mb-0">With groundbreaking water resistant capabilities, The Mission has the
+                            highest waterproof rating of any smartwatch on the market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl pin_popup" id="pinType8" tabindex="-1" aria-labelledby="pinType1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-20">
+                        <div class="topbar-product-card">
+                            <div class="position-relative overflow-hidden">
+                                <span class="new-label bg-danger text-white rounded-circle"> -34% </span>
+                                <img src="assets/images/home-classic/pr-big-25.jpg" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist"><i class="facl facl-heart-o"></i></a>
+
+                                <div class="product-button d-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14"><span>Quick View</span> <i class="iccl iccl-eye"></i></a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')" class="btn rounded-pill fs-14"><span>Quick
+                                            Shop</span>
+                                        <i class="iccl iccl-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <h6 class="mb-2"><a href="javascript:void(0);" class="product-title">La Bohème Rose Gold</a></h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <del>$60.00</del>
+                                    <span class="text-danger">$40.00</span>
+                                </p>
+                                <div class="product-color-list mt-2 gap-2 d-flex align-items-center justify-content-center">
+                                    <a href="javascript:void(0);" x-on:click.prevent="imageUrl = 'assets/images/home-classic/pr-big-24.jpg'; isHovered = false" class="d-inline-block bg_color_pink rounded-circle"></a>
+                                    <a href="javascript:void(0);" x-on:click.prevent="imageUrl = 'assets/images/home-classic/pr-big-25.jpg'; isHovered = false" class="d-inline-block bg-dark rounded-circle"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-overl modal-md" id="pinType9" tabindex="-1" aria-labelledby="pinType3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="fs-16 mb-0 fw-normal">01 - Water Resistance</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted mb-0">With groundbreaking water resistant capabilities, The Mission has the
+                            highest waterproof rating of any smartwatch on the market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cat-section pb-4">
+        <div class="container-fluid">
+            <div class="row g-lg-4 g-3">
+                <div class="col-md-3">
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-100">
+                        <img class="h-100 w-100 cat-grid-img" src="assets/images/home-categories-links/cat-bn-02.jpg">
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Bags</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-100">
+                        <img class="h-100 w-100 cat-grid-img" src="assets/images/home-categories-links/cat-bn-04.jpg">
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Caps & Hats</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-100">
+                        <img class="h-100 w-100 cat-grid-img" src="assets/images/home-categories-links/cat-bn-03.jpg">
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Watches</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a routerLink="/shop-left-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-100">
+                        <img class="h-100 w-100 cat-grid-img" src="assets/images/home-categories-links/cat-bn-01.jpeg">
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Footwear</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <div class="container">
+            <div class="row g-lg-4 g-3 gy-md-0 gy-4 align-items-center">
+                <div class="col-md-4">
+                    <a routerLink="/shop-right-sidebar" class="kalles-banner-promotion d-block">
+                        <img src="assets/images/home-video-banner/bn-01.jpeg" alt="" class="img-fluid" />
+                        <div class="p-20 position-absolute bottom-0 left-0 text-body">
+                            <p class="text-uppercase fw-medium fs-14 mb-1">View Collections</p>
+                            <h3 class="fs-35">LOOKBOOK</h3>
+                            <p class="text-muted mb-0">Your world of fashion in numbers</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="kalles-banner-promotion topbar-product-card">
+                        <div class="position-relative overflow-hidden">
+                            <span class="new-label bg-danger text-white rounded-circle"> -34% </span>
+                            <img [src]="imageUrl" alt="" class="img-fluid" />
+
+                            <a href="javascript:void(0);" class="d-lg-none position-absolute" style="z-index: 1; top: 10px; left: 10px" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-white"></i>
+                            </a>
+
+                            <a href="javascript:void(0);" class="wishlistadd d-none d-lg-flex position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-white"></i>
+                            </a>
+
+                            <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14">
+                                    <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                </a>
+                                <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                    <span>Quick Shop</span>
+                                    <i class="iccl iccl-cart"></i>
+                                </button>
+                            </div>
+
+                            <div class="product-size text-center d-none d-lg-block">
+                                <h6 class="mb-1">
+                                    <a routerLink="/product-detail-layout-01" class="main_link">La Bohème Rose Gold</a>
+                                </h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <del>$60.00</del>
+                                    <span class="text-danger">$45.00</span>
+                                </p>
+
+                                <div class="product-color-list mt-1 gap-2 d-flex align-items-center justify-content-center p-2">
+                                    <a href="javascript:void(0);" (mouseover)="changeImage('assets/images/home-classic/pr-big-24.jpg')" class="d-inline-block bg_color_pink rounded-circle"></a>
+                                    <a href="javascript:void(0);" (mouseover)="changeImage('assets/images/home-classic/pr-big-25.jpg')" class="d-inline-block bg-dark rounded-circle"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <a routerLink="/shop" class="kalles-banner-promotion d-block">
+                        <img src="assets/images/home-classic/pr-big-26.jpg" alt="" class="img-fluid" />
+                        <div class="p-20 position-absolute top-50 end-0 text-body start-0 content-position text-center">
+                            <p class="text-uppercase fw-medium fs-18 mb-1">Men Collection</p>
+                            <h3 class="fs-50">SALE 70%</h3>
+                            <button class="btn btn-custom-dark fw-medium min-w-150 rounded-pill">Shop Now</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-trending></app-trending>
+
+    <app-our-product></app-our-product>
+
+    <app-latest-blog></app-latest-blog>
+
+    <app-follow-instagram></app-follow-instagram>
+
+    <app-shipping></app-shipping>
+
+    <app-footer></app-footer>
+
+    <app-popup></app-popup>
+
+</div>
+
+<app-card-model></app-card-model>

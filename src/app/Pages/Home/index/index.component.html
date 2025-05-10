@@ -1,0 +1,89 @@
+<app-top-banner></app-top-banner>
+<app-header></app-header>
+<div>
+    <div class="kalles-home-section swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div *ngFor="let slide of slides" class="slideshow__slide w-100 swiper-slide" [ngStyle]="{'background-image': 'url(' + slide.imageUrl + ')'}">
+                <div class="container">
+                    <div class="row" [ngClass]="{'justify-content-end': slide.title === 'NEW SEASON'}">
+                        <div class="col-lg-6" *ngIf="slide.title === 'NEW SEASON' else leftAlign">
+                            <div class="text-end" data-aos="fade-right" data-aos-delay="300">
+                                <h4 class="fs-18 fw-medium">{{ slide.title }}</h4>
+                                <h3 class="display-4 fw-semibold mb-3">{{ slide.subtitle }}</h3>
+                                <a class="btn btn-dark rounded-0 min-w-150 text-white" [href]="slide.link">{{ slide.buttonText }}</a>
+                            </div>
+                        </div>
+                        <ng-template #leftAlign>
+                            <div class="col-lg-7">
+                                <div data-aos="fade-right" data-aos-delay="300">
+                                    <h4 class="fs-18 fw-medium">{{ slide.title }}</h4>
+                                    <h1 class="display-4 fw-semibold mb-3">{{ slide.subtitle }}</h1>
+                                    <a class="btn btn-dark rounded-0 min-w-150 text-white" [href]="slide.link">{{ slide.buttonText }}</a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <section class="cat-section">
+        <div class="container">
+            <div class="row g-lg-4 g-2">
+                <div class="col-md-6">
+                    <a routerLink="/shop-right-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-624">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-01/bn-01.jpg');"></div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Women</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a routerLink="/shop-right-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-300 mb-2 mb-lg-4">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-01/bn-02.jpg');"></div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Accessories</div>
+                        </div>
+                    </a>
+                    <a routerLink="/shop-right-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-300">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-01/bn-03.jpg');"></div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Footwear</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a routerLink="/shop-right-sidebar" class="d-block position-relative cat_grid_item overflow-hidden h-624">
+                        <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-01/bn-04.jpg');"></div>
+                        <div class="cat-grid-button text-body">
+                            <div class="cat_grid_item__title">Watches</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-trending-card></app-trending-card>
+
+    <app-lookbook-card></app-lookbook-card>
+
+    <app-seller-card></app-seller-card>
+
+    <app-latest-blog></app-latest-blog>
+
+    <app-follow-instagram></app-follow-instagram>
+
+    <app-shipping></app-shipping>
+
+    <app-footer></app-footer>
+
+    <app-popup></app-popup>
+
+
+</div>
+
+<app-card-model></app-card-model>

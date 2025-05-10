@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+.kalles-bags {
+    .swiper-slide {
+        height: 780px;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 1199.98px) {
+            height: 500px;
+        }
+
+        @media (max-width: 767.98px) {
+            height: 380px;
+        }
+    }
+}

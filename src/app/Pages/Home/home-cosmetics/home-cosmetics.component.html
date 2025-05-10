@@ -1,0 +1,287 @@
+<app-top-banner-cosmetics></app-top-banner-cosmetics>
+<app-header-cosmetics></app-header-cosmetics>
+<div>
+    <section class="kalles-home-section type_slideshow type_carousel kalles-bags overflow-hidden swiper cosmeticSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="assets/images/home-cosmetics/main-slide-01.jpg" alt="" class="position-absolute w-100 h-100 object-fit-cover">
+                <div class="container position-relative">
+                    <div class="row">
+                        <div class="col-lg-4 offset-md-1">
+                            <div class="content">
+                                <h5 class="text-uppercase fs-13 text-lima ls-normal">NEW PRODUCT</h5>
+                                <h1 class="fs-55 font-playfair fw-semibold text-lima mb-3">Free Cleanser <br>
+                                    Goodness</h1>
+                                <a class="btn btn-cosmetics d-inline-flex align-items-center justify-content-center rounded-0 text-uppercase  text-lima" routerLink="/shop">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/home-cosmetics/main-slide-03.jpg" alt="" class="position-absolute w-100 h-100 object-fit-cover">
+                <div class="container position-relative">
+                    <div class="row">
+                        <div class="col-lg-4 offset-md-2">
+                            <div class="content">
+                                <h5 class="text-uppercase fs-13 text-white ls-normal">NEW COLLECTION</h5>
+                                <h1 class="fs-55 font-playfair fw-semibold text-white mb-3">Green Tea <br> Seed
+                                    Serum</h1>
+                                <a class="btn btn-cosmetics d-inline-flex align-items-center justify-content-center rounded-0 text-uppercase  text-lima" routerLink="/shop">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/home-cosmetics/main-slide-02.jpg" alt="" class="position-absolute w-100 h-100 object-fit-cover">
+                <div class="container position-relative">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="content text-center">
+                                <h5 class="text-uppercase fs-13 text-white ls-normal">NEW COLLECTION</h5>
+                                <h1 class="fs-55 font-playfair fw-semibold text-white mb-3">UV Protection Cream</h1>
+                                <a class="btn btn-cosmetics d-inline-flex align-items-center justify-content-center rounded-0 text-uppercase  text-lima" routerLink="/shop">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="kalles-cosmetics-trending-products pb-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-4">
+                        <div>
+                            <h1 class="position-relative text-capitalize font-playfair text-lima fw-medium">
+                                <span>Now Trending</span>
+                            </h1>
+                            <span class="dn tt_divider"><span></span><i class="la la-spa text-muted"></i><span></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 py-2  swiper cosmeticSwiper2">
+                <div class="swiper-wrapper">
+                    <div class="col-lg-3 col-md-3 col-6 px-12 swiper-slide" *ngFor="let product of products">
+                        <div class="topbar-product-card overlay-hover" (mouseenter)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                            <div class="position-relative overflow-hidden main">
+                                <span *ngIf="product.new" class="new-label bg-success text-white rounded-circle">New</span>
+                                <span *ngIf="product.discount" class="new-label bg-danger text-white rounded-circle">-{{product.discount}}%</span>
+                                <img [src]="product.isHovered ? product.hoverImage : product.imageUrl" alt="" class="img-fluid">
+                                <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                    <i class="facl facl-heart-o text-white"></i>
+                                </a>
+                                <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14">
+                                        <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                    </a>
+                                    <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                        <span>Quick Shop</span> <i class="iccl iccl-cart"></i>
+                                    </button>
+                                </div>
+                                <div class="position-absolute d-lg-none bottom-0 end-0 d-flex flex-column bg-white rounded-pill m-2" style="z-index: 1; box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);">
+                                    <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;">
+                                        <i class="iccl iccl-eye fw-semibold"></i>
+                                    </a>
+                                    <button type="button" class="btn responsive-cart rounded-pill fs-14 p-2" style="width:36px; height: 36px;" (click)="openModal('cardModal')">
+                                        <i class="iccl iccl-cart fw-semibold"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <h6 class="mb-1 fs-16 fw-semibold font-playfair">
+                                    <a routerLink="/product-detail-layout-01" class="main_link_lima">{{ product.name }}</a>
+                                </h6>
+                                <p class="mb-0 fs-14 text-muted">
+                                    <span *ngIf="product.discount"><del>{{ product.originalPrice | currency }}</del></span>
+                                    <span>{{ product.price | currency }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="cat-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-4 pb-2">
+                        <div>
+                            <h1 class="position-relative text-capitalize font-playfair text-lima fw-medium">
+                                <span>Welcome to Kalles Natural Skincare</span>
+                            </h1>
+                            <span class="dn tt_divider"><span></span><i class="la la-spa text-muted"></i><span></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-505">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-cosmetics/cat-banner-01.jpg');">
+                                </div>
+                                <div class="cat-grid-button text-body">
+                                    <div class="cat_grid_item__title">Accessories</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-12">
+                            <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-315">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-cosmetics/cat-banner-02.jpg');">
+                                </div>
+                                <div class="cat-grid-button text-body">
+                                    <div class="cat_grid_item__title">Skincare</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-410">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-cosmetics/cat-banner-03.jpg');">
+                                </div>
+                                <div class="cat-grid-button text-body">
+                                    <div class="cat_grid_item__title">Bath & Body</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-12">
+                            <a href="javascript:void(0);" class="d-block position-relative cat_grid_item overflow-hidden h-410">
+                                <div class="h-100 w-100 cat-grid-img" style="background-image: url('assets/images/home-cosmetics/cat-banner-04.jpg');">
+                                </div>
+                                <div class="cat-grid-button text-body">
+                                    <div class="cat_grid_item__title">Makeup Brushes</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cat-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div>
+                        <h1 class="position-relative text-center text-capitalize font-playfair text-lima fw-medium">
+                            <span>New Arrivals</span>
+                        </h1>
+                        <span class="dn tt_divider"><span></span><i class="la la-spa text-muted"></i><span></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-3 col-6" *ngFor="let product of products2">
+                    <div class="topbar-product-card overlay-hover" (mouseenter)="onMouseEnter(product)" (mouseleave)="onMouseLeave(product)">
+                        <div class="position-relative overflow-hidden main">
+                            <span *ngIf="product.discount" class="new-label bg-danger text-white rounded-circle"> -{{ product.discount }}% </span>
+                            <img [src]="product.isHovered ? product.hoverImage : product.imageUrl" alt="" class="img-fluid">
+                            <a href="javascript:void(0);" class="wishlistadd position-absolute" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to Wishlist">
+                                <i class="facl facl-heart-o text-white"></i>
+                            </a>
+                            <div class="product-button d-none d-lg-flex flex-column gap-2">
+                                <a href="javascript:void(0);" (click)="openModal('exampleModal')" class="btn rounded-pill fs-14">
+                                    <span>Quick View</span> <i class="iccl iccl-eye"></i>
+                                </a>
+                                <button type="button" class="btn rounded-pill fs-14" (click)="openModal('cardModal')">
+                                    <span>Quick Shop</span><i class="iccl iccl-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h6 class="mb-1 fs-16 fw-semibold font-playfair">
+                                <a [routerLink]="['/product-detail', product.id]" class="main_link_lima">{{ product.name }}</a>
+                            </h6>
+                            <p class="mb-0 fs-14 text-muted">
+                                <del *ngIf="product.originalPrice">${{ product.originalPrice }}</del>
+                                <span *ngIf="product.discountedPrice">${{ product.discountedPrice }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="overflow-hidden">
+        <div class="container-fuild px-0 swiper cosmeticSwiper3">
+            <div class="row g-0 blog-arrow swiper-wrapper" dir="ltr">
+                <div class="col-md-2 col-6 swiper-slide">
+                    <div class="overflow-hidden img-zoom">
+                        <img src="assets/images/home-cosmetics/intg-01.jpg" alt="" class="img-fluid h-100">
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 swiper-slide">
+                    <div class="overflow-hidden img-zoom">
+                        <img src="assets/images/home-cosmetics/intg-02.jpg" alt="" class="img-fluid h-100">
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 swiper-slide">
+                    <div class="overflow-hidden img-zoom">
+                        <img src="assets/images/home-cosmetics/intg-03.jpg" alt="" class="img-fluid h-100">
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 swiper-slide">
+                    <div class="overflow-hidden img-zoom">
+                        <img src="assets/images/home-cosmetics/intg-04.jpg" alt="" class="img-fluid h-100">
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 swiper-slide">
+                    <div class="overflow-hidden img-zoom">
+                        <img src="assets/images/home-cosmetics/intg-05.jpg" alt="" class="img-fluid h-100">
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 swiper-slide">
+                    <div class="overflow-hidden img-zoom">
+                        <img src="assets/images/home-cosmetics/intg-06.jpg" alt="" class="img-fluid h-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="kellas-medical-brand-list py-5 position-relative">
+        <div class="container swiper cosmeticSwiper4">
+            <div class="row justify-content-between d-flex align-items-center swiper-wrapper" dir="ltr">
+                <div class="col-6 col-sm-4 w-lg-20 brand-item swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/home-cosmetics/br1.png" alt="" class="img-fluid max-w-200 mx-auto d-block">
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 w-lg-20 brand-item swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/home-cosmetics/br2.png" alt="" class="img-fluid max-w-200 mx-auto d-block">
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 w-lg-20 brand-item swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/home-cosmetics/br3.png" alt="" class="img-fluid max-w-200 mx-auto d-block">
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 w-lg-20 brand-item swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/home-cosmetics/br4.png" alt="" class="img-fluid max-w-200 mx-auto d-block">
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 w-lg-20 brand-item swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/home-cosmetics/br5.png" alt="" class="img-fluid max-w-200 mx-auto d-block">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-footer-cosmetics></app-footer-cosmetics>
+    <app-popup></app-popup>
+</div>
+<app-card-model></app-card-model>
