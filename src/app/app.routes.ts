@@ -103,6 +103,12 @@ import { BlogPostWithProductListingComponent } from './Pages/Blog/blog-post-with
 import { BlogRightSidebarComponent } from './Pages/Blog/blog-right-sidebar/blog-right-sidebar.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 
+import { LoginComponent } from './Pages/Home/login/login.component';
+import { RegisterComponent } from './Pages/Home/register/register.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 export const routes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'home-classic', component: HomeClassicComponent },
@@ -220,5 +226,8 @@ export const routes: Routes = [
     { path: 'blog-right-sidebar', component: BlogRightSidebarComponent },
 
     { path: 'wishlist', component: WishlistComponent },
+
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent }
 
 ];

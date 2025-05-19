@@ -128,7 +128,7 @@ File: Custom Bootstrap Css File
   --bs-body-line-height: 1.5;
   --bs-body-color: #222;
   --bs-body-color-rgb: 34, 34, 34;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #F5F5F5;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -171,13 +171,16 @@ File: Custom Bootstrap Css File
   --bs-form-valid-border-color: #1b745e;
   --bs-form-invalid-color: #ff3e11;
   --bs-form-invalid-border-color: #ff3e11;
+  --bs-light-dark: #fff;
+  --btn-light-dark: #229799;
 }
 
 [data-bs-theme=dark] {
   color-scheme: dark;
   --bs-body-color: #dee2e6;
   --bs-body-color-rgb: 222, 226, 230;
-  --bs-body-bg: #222;
+  /* --bs-body-bg: #222; */
+  --bs-body-bg: #424242;
   --bs-body-bg-rgb: 34, 34, 34;
   --bs-emphasis-color: #fff;
   --bs-emphasis-color-rgb: 255, 255, 255;
@@ -227,6 +230,8 @@ File: Custom Bootstrap Css File
   --bs-form-valid-border-color: #76ac9e;
   --bs-form-invalid-color: #ff8b70;
   --bs-form-invalid-border-color: #ff8b70;
+  --bs-light-dark: #000;
+  --btn-light-dark: #48CFCB;
 }
 
 *,
@@ -3882,10 +3887,10 @@ fieldset:disabled .btn {
 
 .btn-info {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #0dcaf0;
-  --bs-btn-border-color: #0dcaf0;
+  --bs-btn-bg: #48CFCB;
+  --bs-btn-border-color: #48CFCB;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0baccc;
+  --bs-btn-hover-bg: #229799;
   --bs-btn-hover-border-color: #0aa2c0;
   --bs-btn-focus-shadow-rgb: 49, 210, 242;
   --bs-btn-active-color: #fff;
@@ -3893,8 +3898,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #0a98b4;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #0dcaf0;
-  --bs-btn-disabled-border-color: #0dcaf0;
+  --bs-btn-disabled-bg: #48CFCB;
+  --bs-btn-disabled-border-color: #48CFCB;
 }
 
 .btn-warning {
@@ -11850,6 +11855,11 @@ fieldset:disabled .btn {
 .text-white {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-light-dark {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-light-dark), var(--bs-text-opacity)) !important;
 }
 
 .text-body {
@@ -20512,4 +20522,19 @@ fieldset:disabled .btn {
 
 .nav-orange.nav-underline .nav-item .nav-link::before {
   background-color: #ff8400;
+}
+
+.custom-input {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 12px 15px;
+  margin: 2% 0;
+  background: white;
+  color: #000;
+}
+
+.custom-input:focus {
+  border-color: #48CFCB;
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 128, 128, 0.5);
 }

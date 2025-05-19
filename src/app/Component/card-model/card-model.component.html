@@ -821,25 +821,27 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="accountOffcanvas" aria-labelledby="accountOffcanvasLabel">
     <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title fs-16 text-uppercase" id="accountOffcanvasLabel">LOGIN</h5>
-        <button type="button" class="btn-close btn-close-none" (click)="closeOffcanvas('accountOffcanvas')" aria-label="Close"><i class="pe-7s-close pegk"></i></button>
+        <button type="button" class="btn-close btn-close-none" data-bs-dismiss="accountOffcanvas"
+         (click)="closeOffcanvas('accountOffcanvas')" aria-label="Close"><i class="pe-7s-close pegk"></i></button>
+        
     </div>
     <div class="offcanvas-body">
         <div>
             <form action="#!" class="mb-4">
                 <div class="mb-3">
-                    <label for="emailInputOffcanvas" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" id="emailInputOffcanvas">
+                    <label for="emailInputoffcanvas" class="form-label text-light-dark">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="emailInputoffcanvas">
                 </div>
                 <div class="mb-3 pb-1">
-                    <label for="current-password" class="form-label">Password <span class="text-danger">*</span></label>
+                    <label for="current-password" class="form-label text-light-dark">Password <span class="text-danger">*</span></label>
                     <input type="password" class="form-control" id="current-password" autocomplete="off">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-info w-100 rounded-pill">SIGN IN</button>
                 </div>
             </form>
-            <p class="text-muted">New customer? <a href="javascript:void(0);" class="product-title">Create your account</a></p>
-            <p class="text-muted">Lost password? <a href="javascript:void(0);" class="product-title">Recover password</a></p>
+            <p> <a href="javascript:void(0);" class="product-title text-light-dark">Create your account</a></p>
+            <p> <a href="javascript:void(0);" class="product-title text-light-dark">Recover password</a></p>
         </div>
     </div>
 </div>

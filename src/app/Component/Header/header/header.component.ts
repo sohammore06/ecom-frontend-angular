@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Renderer2 } from '@angular/core';
 import { SwiperService } from '../../../Services/swiper.service';
 import { RouterLink } from '@angular/router';
 import { Modal, Offcanvas } from 'bootstrap';
@@ -11,6 +11,8 @@ import { Modal, Offcanvas } from 'bootstrap';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  isDarkTheme = false;
+
   products = [
     {
       imageUrl: 'assets/images/megamenu/pr-01.jpg',
@@ -69,7 +71,16 @@ export class HeaderComponent {
   changeImage(newImageUrl: string) {
     this.currentImageUrl = newImageUrl;
   }
-  constructor(private swiperService: SwiperService) { }
+  constructor(
+    private swiperService: SwiperService,
+    private renderer: Renderer2
+  ) {
+      // Load saved theme on initialization
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      this.isDarkTheme = savedTheme === 'dark';
+      this.renderer.setAttribute(document.body, 'data-bs-theme', savedTheme);
+  }
+
 
   isScrolled = false;
 
@@ -140,5 +151,12 @@ export class HeaderComponent {
     } else {
       console.error(`Offcanvas with ID '${offcanvasId}' not found 🔥`);
     }
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    const theme = this.isDarkTheme ? 'dark' : 'light';
+    this.renderer.setAttribute(document.body, 'data-bs-theme', theme);
+    localStorage.setItem('theme', theme);
   }
 }

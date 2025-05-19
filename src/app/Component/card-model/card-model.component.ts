@@ -84,14 +84,16 @@ export class CardModelComponent {
       this.swiperService.initSwiper('.productJewellry', 1, 0, 3000, 1, 1, 1);
     });
 
-    const offcanvasElements = document.querySelectorAll('.offcanvas');
-    offcanvasElements.forEach((offcanvasElement) => {
-      const offcanvasId = offcanvasElement.getAttribute('id');
-      if (offcanvasId) {
-        const offcanvas = new Offcanvas(offcanvasElement as HTMLElement);
-        this.offcanvasInstances[offcanvasId] = offcanvas;
-      }
-    });
+    setTimeout(() => {
+      const offcanvasElements = document.querySelectorAll('.offcanvas');
+      offcanvasElements.forEach((offcanvasElement) => {
+        const offcanvasId = offcanvasElement.getAttribute('id');
+        if (offcanvasId) {
+          const offcanvas = new Offcanvas(offcanvasElement as HTMLElement);
+          this.offcanvasInstances[offcanvasId] = offcanvas;
+        }
+      });
+    }, 0); 
   }
 
   openModal(modalId: string) {
